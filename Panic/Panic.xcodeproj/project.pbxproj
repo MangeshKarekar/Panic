@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E259C601F90C85D004019AC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E259C5F1F90C85D004019AC /* RootViewController.swift */; };
+		9E259C691F910309004019AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E259C681F910309004019AC /* Home.storyboard */; };
 		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
 		9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		9E259C5F1F90C85D004019AC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
 		9EC7FC9C1F8F8F47002B2A62 /* Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
 				9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */,
 				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
+				9E259C681F910309004019AC /* Home.storyboard */,
 				9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */,
 				9EC7FCA61F8F8F47002B2A62 /* Assets.xcassets */,
 				9EC7FCA81F8F8F47002B2A62 /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 				9EC7FCAA1F8F8F47002B2A62 /* LaunchScreen.storyboard in Resources */,
 				9EC7FCA71F8F8F47002B2A62 /* Assets.xcassets in Resources */,
 				9EC7FCA51F8F8F47002B2A62 /* Main.storyboard in Resources */,
+				9E259C691F910309004019AC /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

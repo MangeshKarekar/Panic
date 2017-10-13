@@ -13,7 +13,7 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource {
     var pageViewController: UIPageViewController?
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     let manageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ManageViewController") as! ManageViewController
-    let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+    let homeViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
     let settingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
     
     var viewArray = [UIViewController]()
