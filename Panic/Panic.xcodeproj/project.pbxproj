@@ -68,6 +68,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E259C6A1F9103C1004019AC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */,
+				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
+				9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */,
+				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E259C6B1F9103D1004019AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9E259C681F910309004019AC /* Home.storyboard */,
+				9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		9EC7FC931F8F8F47002B2A62 = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +113,8 @@
 				9EC7FCC31F8F9FA5002B2A62 /* CustomAnimations */,
 				9EC7FCC21F8F9F93002B2A62 /* Extensions */,
 				9EC7FCBF1F8F9A95002B2A62 /* CustomClasses */,
-				9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */,
-				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
-				9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */,
-				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
-				9E259C681F910309004019AC /* Home.storyboard */,
-				9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */,
+				9E259C6A1F9103C1004019AC /* ViewControllers */,
+				9E259C6B1F9103D1004019AC /* Storyboards */,
 				9EC7FCA61F8F8F47002B2A62 /* Assets.xcassets */,
 				9EC7FCA81F8F8F47002B2A62 /* LaunchScreen.storyboard */,
 				9EC7FCAB1F8F8F48002B2A62 /* Info.plist */,
