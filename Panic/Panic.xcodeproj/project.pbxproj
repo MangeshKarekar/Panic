@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E259C601F90C85D004019AC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E259C5F1F90C85D004019AC /* RootViewController.swift */; };
+		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
+		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
 		9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */; };
-		9EC7FCA21F8F8F47002B2A62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA11F8F8F47002B2A62 /* ViewController.swift */; };
+		9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */; };
 		9EC7FCA51F8F8F47002B2A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */; };
 		9EC7FCA71F8F8F47002B2A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA61F8F8F47002B2A62 /* Assets.xcassets */; };
 		9EC7FCAA1F8F8F47002B2A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA81F8F8F47002B2A62 /* LaunchScreen.storyboard */; };
@@ -28,9 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E259C5F1F90C85D004019AC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
 		9EC7FC9C1F8F8F47002B2A62 /* Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EC7FCA11F8F8F47002B2A62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9EC7FCA41F8F8F47002B2A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EC7FCA61F8F8F47002B2A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC7FCA91F8F8F47002B2A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +91,10 @@
 				9EC7FCC31F8F9FA5002B2A62 /* CustomAnimations */,
 				9EC7FCC21F8F9F93002B2A62 /* Extensions */,
 				9EC7FCBF1F8F9A95002B2A62 /* CustomClasses */,
-				9EC7FCA11F8F8F47002B2A62 /* ViewController.swift */,
+				9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */,
+				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
+				9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */,
+				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
 				9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */,
 				9EC7FCA61F8F8F47002B2A62 /* Assets.xcassets */,
 				9EC7FCA81F8F8F47002B2A62 /* LaunchScreen.storyboard */,
@@ -231,8 +240,11 @@
 			files = (
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
 				9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */,
-				9EC7FCA21F8F8F47002B2A62 /* ViewController.swift in Sources */,
+				9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */,
+				9E259C601F90C85D004019AC /* RootViewController.swift in Sources */,
 				9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */,
+				9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */,
+				9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

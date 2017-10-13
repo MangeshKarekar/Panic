@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="sGG-Eb-LAo">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sGG-Eb-LAo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EGw-Ax-ky7"/>
                             <constraint firstItem="sGG-Eb-LAo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ODt-wh-MYp"/>
-                            <constraint firstItem="sGG-Eb-LAo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="d8o-iU-NjY"/>
+                            <constraint firstItem="sGG-Eb-LAo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" constant="-20" id="d8o-iU-NjY"/>
                             <constraint firstItem="sGG-Eb-LAo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eyl-v7-C9q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch" width="1102" height="2074"/>
+        <image name="launch" width="1103" height="2068"/>
     </resources>
 </document>
