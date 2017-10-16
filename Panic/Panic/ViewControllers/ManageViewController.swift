@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import ContactsUI
 
-class ManageViewController: UIViewController {
+class ManageViewController: UIViewController,CNContactPickerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +32,18 @@ class ManageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func pressed(_ sender: UIButton){
+        let contactPicker = CNContactPickerViewController()
+        contactPicker.delegate = self
+        present(contactPicker, animated: true, completion: nil)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
+        
+        print(contacts)
+    }
+
 
 }

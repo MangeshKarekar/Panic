@@ -82,30 +82,14 @@
                                     <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="WF2-54-sfP"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;--Manage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-m4-ecK">
-                                <rect key="frame" x="6" y="84" width="44.5" height="10"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings--&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1V-iD-AoH">
-                                <rect key="frame" x="324" y="84" width="46.5" height="10"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5xs-Aw-hoW" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="0WQ-7e-jYG"/>
                             <constraint firstItem="5xs-Aw-hoW" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" id="3ze-4u-5fG"/>
                             <constraint firstItem="Aul-Oe-rz7" firstAttribute="top" secondItem="FCi-gl-O10" secondAttribute="top" constant="20" id="94Y-gV-R1i"/>
-                            <constraint firstItem="FCi-gl-O10" firstAttribute="trailing" secondItem="h1V-iD-AoH" secondAttribute="trailing" constant="4.5" id="ESS-vX-iIo"/>
                             <constraint firstItem="Veg-Zp-lz4" firstAttribute="top" secondItem="Aul-Oe-rz7" secondAttribute="bottom" constant="30" id="Eis-pm-GuQ"/>
-                            <constraint firstItem="m2M-m4-ecK" firstAttribute="top" secondItem="FCi-gl-O10" secondAttribute="top" constant="20" id="TLh-po-fkc"/>
-                            <constraint firstItem="h1V-iD-AoH" firstAttribute="top" secondItem="FCi-gl-O10" secondAttribute="top" constant="20" id="Tav-8y-eIK"/>
                             <constraint firstItem="5xs-Aw-hoW" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" constant="80" id="UOE-yw-Wpi"/>
-                            <constraint firstItem="m2M-m4-ecK" firstAttribute="leading" secondItem="FCi-gl-O10" secondAttribute="leading" constant="6" id="bsq-Ea-m3q"/>
                             <constraint firstItem="Veg-Zp-lz4" firstAttribute="width" secondItem="Aul-Oe-rz7" secondAttribute="width" constant="-35" id="jYg-22-8zA"/>
                             <constraint firstItem="Veg-Zp-lz4" firstAttribute="height" secondItem="Aul-Oe-rz7" secondAttribute="height" constant="-35" id="kZb-0a-Cnj"/>
                             <constraint firstItem="Veg-Zp-lz4" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" constant="-80" id="mwB-Xy-YD7"/>

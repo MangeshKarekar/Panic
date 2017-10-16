@@ -16,10 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="Ho5-qo-9WD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-wT-3wm">
+                                <rect key="frame" x="168" y="741" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.83499330279999995" blue="0.0044323126790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.98105663060000003" green="0.18144097919999999" blue="0.19153204560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0py-Gc-Sdk" firstAttribute="bottom" secondItem="eqa-wT-3wm" secondAttribute="bottom" id="Ono-HG-Kdb"/>
+                            <constraint firstItem="eqa-wT-3wm" firstAttribute="centerX" secondItem="0py-Gc-Sdk" secondAttribute="centerX" id="jQv-X2-VuR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0py-Gc-Sdk"/>
                     </view>
                     <navigationItem key="navigationItem" id="EKt-F1-Nd1"/>
+                    <connections>
+                        <outlet property="mainPageControl" destination="eqa-wT-3wm" id="bxx-H1-8si"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcR-Wh-kLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +61,20 @@
                     <view key="view" contentMode="scaleToFill" id="n14-ev-rr8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ju-6r-T2F">
+                                <rect key="frame" x="164" y="396" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressed:" destination="yza-r5-0F6" eventType="touchUpInside" id="ZeS-Aa-yHl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9ju-6r-T2F" firstAttribute="centerX" secondItem="8Qu-W2-Unj" secondAttribute="centerX" id="3Qb-DL-aIN"/>
+                            <constraint firstItem="9ju-6r-T2F" firstAttribute="centerY" secondItem="8Qu-W2-Unj" secondAttribute="centerY" id="WSE-e2-QYf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Qu-W2-Unj"/>
                     </view>
                 </viewController>

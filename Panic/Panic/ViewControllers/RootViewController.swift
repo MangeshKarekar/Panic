@@ -8,9 +8,13 @@
 
 import UIKit
 
-class RootViewController: UIViewController,UIPageViewControllerDataSource {
+class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPageViewControllerDelegate {
     
-    var pageViewController: UIPageViewController?
+    
+    @IBOutlet weak var mainPageControl: UIPageControl!
+    
+    
+    var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     let manageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ManageViewController") as! ManageViewController
     let homeViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
@@ -18,20 +22,33 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource {
     
     var viewArray = [UIViewController]()
 
+    var selectedIndex = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurePageController()
+        // Do any additional setup after loading the view.
+    }
+    
+    func configurePageController(){
         viewArray = [manageViewController,homeViewController,settingsViewController]
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.pageViewController!.dataSource = self
+        self.pageViewController.dataSource = self
+        self.pageViewController.delegate = self
         let viewControllers = [homeViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
+        self.pageViewController.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
+        self.addChildViewController(self.pageViewController)
+        self.pageViewController.view.frame = self.view.frame
+        self.view.addSubview(self.pageViewController.view)
+        self.pageViewController.didMove(toParentViewController: self)
+        configurePageControl()
 
-        self.addChildViewController(self.pageViewController!)
-        self.pageViewController!.view.frame = self.view.frame
-        self.view.addSubview(self.pageViewController!.view)
-        self.pageViewController!.didMove(toParentViewController: self)
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func configurePageControl() {
+        mainPageControl.numberOfPages = viewArray.count
+        mainPageControl.currentPage = 1
+        self.view.bringSubview(toFront: mainPageControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +83,23 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource {
         }
         return nil
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        
+        if let pendingViewController = pendingViewControllers.first{
+            if let index = viewArray.index(of: pendingViewController){
+                selectedIndex = index
+            }
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
+        
+        if completed{
+            mainPageControl.currentPage = selectedIndex
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
