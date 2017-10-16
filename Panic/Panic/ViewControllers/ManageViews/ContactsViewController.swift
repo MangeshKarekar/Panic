@@ -10,10 +10,23 @@ import UIKit
 
 class ContactsViewController: UIViewController {
 
+    var colorTheme: PanicColor?
+    
+    @IBOutlet weak var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setBackground() 
         // Do any additional setup after loading the view.
+    }
+    
+    func setBackground(){
+        if let colorTheme = colorTheme{
+            switch colorTheme{
+            case .red: backgroundView.backgroundColor = Colors.panicRedWithAlpha(alpha: 0.3)
+            case .yellow: backgroundView.backgroundColor = Colors.panicYellowWithAlpha(alpha: 0.3)
+            case .green: backgroundView.backgroundColor = Colors.panicGreenWithAlpha(alpha: 0.3)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

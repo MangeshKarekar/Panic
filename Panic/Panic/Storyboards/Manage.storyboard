@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="32" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="panicColorCell" rowHeight="78" id="Vct-wA-oRT" customClass="PanicLevelColorTableViewCell" customModule="Panic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="panicColorCell" rowHeight="78" id="Vct-wA-oRT" customClass="PanicLevelColorTableViewCell" customModule="Panic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vct-wA-oRT" id="TmC-wD-6NR">
@@ -47,23 +47,38 @@
                     </view>
                     <navigationItem key="navigationItem" id="9zf-DT-jn9"/>
                     <connections>
-                        <segue destination="wOb-ZD-ewY" kind="show" id="eLk-Vr-9Kn"/>
+                        <segue destination="wOb-ZD-ewY" kind="show" identifier="contactsSegue" id="eLk-Vr-9Kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qv-G9-SoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1282.4000000000001" y="149.77511244377811"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts View Controller-->
         <scene sceneID="1Hq-sg-tu5">
             <objects>
-                <viewController id="wOb-ZD-ewY" sceneMemberID="viewController">
+                <viewController id="wOb-ZD-ewY" customClass="ContactsViewController" customModule="Panic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2H-ro-mEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg9-l0-QJW">
+                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="height" secondItem="R2H-ro-mEN" secondAttribute="height" id="8aC-lp-3Wg"/>
+                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="CY5-Xw-eYC"/>
+                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="TUF-m1-AC6"/>
+                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="centerY" secondItem="mwC-OG-4kh" secondAttribute="centerY" id="WgD-o5-9UQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mwC-OG-4kh"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Fg9-l0-QJW" id="j6F-0o-GFe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFN-Xd-N3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

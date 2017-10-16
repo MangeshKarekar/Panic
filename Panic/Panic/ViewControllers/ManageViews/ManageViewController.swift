@@ -14,6 +14,7 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     private let paniCellID = "panicColorCell"
     private let panicColors = ["Red": Colors.panicRed, "Yellow":Colors.panicYellow, "Green ": Colors.panicGreen]
     private var panicColorKeys = [String]()
+    private let contactsSegue = "contactsSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,18 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == contactsSegue{
+            let contactsViewController = segue.destination as! ContactsViewController
+            contactsViewController.colorTheme = sender as? PanicColor
+        }
+        
     }
-    */
+    
     
     
     
@@ -69,6 +73,9 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedColor = getColorForSections(index: indexPath.section)
+        self.performSegue(withIdentifier: contactsSegue, sender: selectedColor)
         
         
     }

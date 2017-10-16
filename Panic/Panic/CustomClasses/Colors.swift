@@ -22,7 +22,6 @@ class Colors {
     private static let yellow = "FFD501"
     private static let green = "A2D345"
 
-    
     static var panicRed: UIColor{
         get {
             return red.colorFromHex(alpha: 1.0)
@@ -40,4 +39,17 @@ class Colors {
             return green.colorFromHex(alpha: 1.0)
         }
     }
+    
+    static func panicRedWithAlpha(alpha: CGFloat) ->UIColor{
+          return "FA2E31".colorFromHex(alpha: alpha)
+    }
+    
+    static func panicYellowWithAlpha(alpha: CGFloat) ->UIColor{
+        return "FFD501".colorFromHex(alpha: alpha)
+    }
+    
+    static func panicGreenWithAlpha(alpha: CGFloat) ->UIColor{
+        return "A2D345".colorFromHex(alpha: alpha)
+    }
+    
 }
