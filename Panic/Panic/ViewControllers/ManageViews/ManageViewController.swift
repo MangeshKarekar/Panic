@@ -12,17 +12,12 @@ import ContactsUI
 class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
 
     private let paniCellID = "panicColorCell"
-    private let panicColorCount = 1
-    private let numberOfSections = 3
-    
     private let panicColors = ["Red": Colors.panicRed, "Yellow":Colors.panicYellow, "Green ": Colors.panicGreen]
     private var panicColorKeys = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         panicColorKeys = [String](panicColors.keys)
-    
-    
         // Do any additional setup after loading the view.
     }
 

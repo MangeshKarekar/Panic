@@ -16,7 +16,7 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     
     var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    let manageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ManageViewController") as! ManageViewController
+    let manageViewController = UIStoryboard(name: "Manage", bundle: nil).instantiateViewController(withIdentifier: "ManageViewController") as! ManageViewController
     let homeViewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
     let settingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
     

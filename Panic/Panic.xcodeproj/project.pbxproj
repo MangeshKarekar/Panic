@@ -11,6 +11,7 @@
 		9E259C691F910309004019AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E259C681F910309004019AC /* Home.storyboard */; };
 		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
+		9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3F2931F950FBF00B91E25 /* ContactsViewController.swift */; };
 		9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */; };
 		9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */; };
 		9EC7FCA51F8F8F47002B2A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69C1F94FD5C0065539E /* Colors.swift */; };
 		9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69E1F94FD7D0065539E /* Extensions.swift */; };
 		9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */; };
+		9EF9F6A41F950E280065539E /* Manage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9F6A31F950E270065539E /* Manage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		9EB3F2931F950FBF00B91E25 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		9EC7FC9C1F8F8F47002B2A62 /* Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		9EF9F69C1F94FD5C0065539E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9EF9F69E1F94FD7D0065539E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicLevelColorTableViewCell.swift; sourceTree = "<group>"; };
+		9EF9F6A31F950E270065539E /* Manage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,8 @@
 			children = (
 				9EF9F6A01F94FF390065539E /* custom cells */,
 				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
+				9EB3F2921F950F6E00B91E25 /* ManageViews */,
 				9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */,
-				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
 				9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -89,11 +93,21 @@
 		9E259C6B1F9103D1004019AC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				9EF9F6A31F950E270065539E /* Manage.storyboard */,
 				9EC7FCA81F8F8F47002B2A62 /* LaunchScreen.storyboard */,
 				9E259C681F910309004019AC /* Home.storyboard */,
 				9EC7FCA31F8F8F47002B2A62 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9EB3F2921F950F6E00B91E25 /* ManageViews */ = {
+			isa = PBXGroup;
+			children = (
+				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
+				9EB3F2931F950FBF00B91E25 /* ContactsViewController.swift */,
+			);
+			path = ManageViews;
 			sourceTree = "<group>";
 		};
 		9EC7FC931F8F8F47002B2A62 = {
@@ -256,6 +270,7 @@
 			files = (
 				9EC7FCAA1F8F8F47002B2A62 /* LaunchScreen.storyboard in Resources */,
 				9EC7FCA71F8F8F47002B2A62 /* Assets.xcassets in Resources */,
+				9EF9F6A41F950E280065539E /* Manage.storyboard in Resources */,
 				9EC7FCA51F8F8F47002B2A62 /* Main.storyboard in Resources */,
 				9E259C691F910309004019AC /* Home.storyboard in Resources */,
 			);
@@ -276,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
+				9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */,
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
 				9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */,
 				9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */,
