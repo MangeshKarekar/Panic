@@ -9,11 +9,20 @@
 import UIKit
 import ContactsUI
 
-class ManageViewController: UIViewController,CNContactPickerDelegate {
+class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
 
+    private let paniCellID = "panicColorCell"
+    private let panicColorCount = 1
+    private let numberOfSections = 3
+    
+    private let panicColors = ["Red": Colors.panicRed, "Yellow":Colors.panicYellow, "Green ": Colors.panicGreen]
+    private var panicColorKeys = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        panicColorKeys = [String](panicColors.keys)
+    
+    
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +41,42 @@ class ManageViewController: UIViewController,CNContactPickerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    //MARK: Tabale view datasource & delegates
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return panicColors.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return panicColorKeys[section]
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: paniCellID) as! PanicLevelColorTableViewCell
+        cell.panicColor = getColorForSections(index: indexPath.section)
+        return cell
+    }
+    
+    private func getColorForSections(index:Int)-> PanicColor?{
+        switch index {
+        case 0:return PanicColor.red
+        case 1: return PanicColor.yellow
+        case 2: return PanicColor.green
+        default: return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
     
     
     @IBAction func pressed(_ sender: UIButton){

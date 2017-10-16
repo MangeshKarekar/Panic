@@ -24,7 +24,6 @@ extension String{
         var hexInt: UInt32 = 0
         let scanner: Scanner = Scanner(string: fromHexString)
         scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
-        // Scan hex value
         scanner.scanHexInt32(&hexInt)
         return hexInt
     }

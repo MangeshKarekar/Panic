@@ -21,6 +21,7 @@
 		9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCC41F8F9FBF002B2A62 /* UIViewAnimations.swift */; };
 		9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69C1F94FD5C0065539E /* Colors.swift */; };
 		9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69E1F94FD7D0065539E /* Extensions.swift */; };
+		9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9EC7FCC41F8F9FBF002B2A62 /* UIViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		9EF9F69C1F94FD5C0065539E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9EF9F69E1F94FD7D0065539E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicLevelColorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		9E259C6A1F9103C1004019AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EF9F6A01F94FF390065539E /* custom cells */,
 				9E259C5F1F90C85D004019AC /* RootViewController.swift */,
 				9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */,
 				9E37D2371F90BC3600A80A8D /* ManageViewController.swift */,
@@ -158,6 +161,14 @@
 				9EC7FCC41F8F9FBF002B2A62 /* UIViewAnimations.swift */,
 			);
 			path = CustomAnimations;
+			sourceTree = "<group>";
+		};
+		9EF9F6A01F94FF390065539E /* custom cells */ = {
+			isa = PBXGroup;
+			children = (
+				9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */,
+			);
+			path = "custom cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +279,7 @@
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
 				9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */,
 				9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */,
+				9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */,
 				9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */,
 				9E259C601F90C85D004019AC /* RootViewController.swift in Sources */,
 				9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */,
