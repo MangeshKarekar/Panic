@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class PanicLevelColorTableViewCell: UITableViewCell {
-
-    var panicColor: PanicColor?{
+    
+    var colorEntity: ColorsEntity?{
         didSet{
-            setColor(panicColor: panicColor)
+            setBackgroundColor(color: colorEntity?.color)
         }
     }
     
@@ -28,13 +28,8 @@ class PanicLevelColorTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    private func setColor(panicColor: PanicColor?){
-        if let panicColor = panicColor{
-            switch panicColor{
-            case .red: self.backgroundColor = Colors.panicRed
-            case .yellow: self.backgroundColor = Colors.panicYellow
-            case .green: self.backgroundColor = Colors.panicGreen
-            }
-        }
+    private func setBackgroundColor(color: UIColor?){
+        self.backgroundColor = color
     }
+ 
 }

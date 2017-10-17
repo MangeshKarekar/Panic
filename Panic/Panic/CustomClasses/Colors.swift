@@ -11,12 +11,6 @@ import UIKit
 
 //MARK: Colors
 
-enum PanicColor {
-    case red
-    case yellow
-    case green
-}
-
 class Colors {
     private static let red = "FA2E31"
     private static let yellow = "FFD501"

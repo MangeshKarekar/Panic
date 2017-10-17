@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ManageController {
     
@@ -18,10 +19,10 @@ class ManageController {
     
     //MARK: create colors
     func createColors() throws{
-        do {
-            try repository.createColors()
-        } catch {
-            throw error
-        }
+        try repository.createColors()
+    }
+    
+    func getColors()throws ->Results<ColorsEntity>{
+        return try repository.getColors()
     }
 }

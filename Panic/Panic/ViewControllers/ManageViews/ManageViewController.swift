@@ -8,6 +8,7 @@
 
 import UIKit
 import ContactsUI
+import RealmSwift
 
 class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
 
@@ -16,8 +17,14 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     private var panicColorKeys = [String]()
     private let contactsSegue = "contactsSegue"
     
+    let manageController = ManageController.sharedInstance
+    var colorResults: Results<ColorsEntity>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        do{
+            colorResults = try manageController.getColors()
+        }catch{print(error)}
         panicColorKeys = [String](panicColors.keys)
         // Do any additional setup after loading the view.
     }
@@ -46,12 +53,14 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //MARK: Tabale view datasource & delegates
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return panicColors.count
+        
+        if let colorResults = colorResults{
+            return colorResults.count
+        }
+        
+        return 0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return panicColorKeys[section]
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -59,25 +68,14 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: paniCellID) as! PanicLevelColorTableViewCell
-        cell.panicColor = getColorForSections(index: indexPath.section)
+        if let colorResults = colorResults{
+            cell.colorEntity = colorResults[indexPath.section]
+        }
         return cell
     }
     
-    private func getColorForSections(index:Int)-> PanicColor?{
-        switch index {
-        case 0:return PanicColor.red
-        case 1: return PanicColor.yellow
-        case 2: return PanicColor.green
-        default: return nil
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let selectedColor = getColorForSections(index: indexPath.section)
-        self.performSegue(withIdentifier: contactsSegue, sender: selectedColor)
-        
-        
+       // self.performSegue(withIdentifier: contactsSegue, sender: selectedColor)
     }
     
     

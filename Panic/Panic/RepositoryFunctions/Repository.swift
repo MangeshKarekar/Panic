@@ -22,7 +22,7 @@ class Repository {
             let colors = realm.objects(ColorsEntity.self)
             if colors.count == 0{
                 try realm.write {
-                    let colors = getcolors()
+                    let colors = generateColors()
                     for color in colors{
                         realm.add(color, update: true)
                     }
@@ -35,7 +35,7 @@ class Repository {
     }
     
     
-    private func getcolors() -> [Object]{
+    private func generateColors() -> [Object]{
         let red = ColorsEntity()
         red.name = Colors.redString
         red.message = "Please Help me."
@@ -52,6 +52,16 @@ class Repository {
     }
     
     
+    func getColors()throws -> Results<ColorsEntity>{
+        do{
+            let realm = try getRealm()
+            return realm.objects(ColorsEntity.self)
+        }catch{
+            throw error
+        }
+    }
+    
+    //MARK: Common functions
     private func getRealm()throws -> Realm{
         
         do {

@@ -11,6 +11,7 @@
 		9E259C691F910309004019AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E259C681F910309004019AC /* Home.storyboard */; };
 		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
+		9E5BBE631F963D300031A635 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE621F963D300031A635 /* Color.swift */; };
 		9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3F2931F950FBF00B91E25 /* ContactsViewController.swift */; };
 		9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */; };
 		9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCA11F8F8F47002B2A62 /* HomeViewController.swift */; };
@@ -50,6 +51,7 @@
 		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		9E5BBE621F963D300031A635 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9EB3F2931F950FBF00B91E25 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		9EC7FC9C1F8F8F47002B2A62 /* Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		9E5BBE611F963D1F0031A635 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E5BBE621F963D300031A635 /* Color.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9EB3F2921F950F6E00B91E25 /* ManageViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */,
+				9E5BBE611F963D1F0031A635 /* Model */,
 				9EE46C7B1F961CF6002C4098 /* RepositoryFunctions */,
 				9EE46C781F961C7D002C4098 /* Controller */,
 				9EE46C6D1F961766002C4098 /* Entity */,
@@ -464,6 +475,7 @@
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
 				9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */,
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
+				9E5BBE631F963D300031A635 /* Color.swift in Sources */,
 				9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */,
 				9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */,
 				9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */,
