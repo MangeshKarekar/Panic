@@ -8,13 +8,16 @@
 
 import UIKit
 
-class MessageTableViewCell: UITableViewCell {
+class MessageTableViewCell: UITableViewCell,UITextViewDelegate{
 
     @IBOutlet weak var messageText: UITextView!
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignKeyboard))
+        toolBar.items = [doneButton]
+        messageText.inputAccessoryView = toolBar
         // Initialization code
     }
 
@@ -23,5 +26,8 @@ class MessageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @objc func resignKeyboard(){
+        messageText.resignFirstResponder()
+    }
 }

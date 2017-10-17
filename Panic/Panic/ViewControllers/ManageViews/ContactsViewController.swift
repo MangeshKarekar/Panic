@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import ContactsUI
 
-class ContactsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,UITextViewDelegate {
+class ContactsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate {
     
     var colorEntity: ColorsEntity?
     var contacts =  List<ContactsEntity>()
@@ -23,9 +24,8 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     let contactsCellID = "ContactsCell"
     
     @IBOutlet weak var manageTable: UITableView!
-    @IBOutlet weak var locationSwitch: UISwitch!
     
-    @IBOutlet weak var messageTextView: UITextView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +37,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     func setUI(forEntity colorEntity: ColorsEntity){
-        self.view.backgroundColor = colorEntity.color
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = view.bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        view.addSubview(blurEffectView)
+      //  self.view.backgroundColor = colorEntity.color
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,9 +119,17 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         return cell!
     }
     
-    //MARK: Textview delegates
+    @IBAction func addContactsPressed(_ sender: UIButton){
+        let contactPicker = CNContactPickerViewController()
+        contactPicker.delegate = self
+        present(contactPicker, animated: true, completion: nil)
+    }
     
-    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
+        
+        print(contacts)
+    }
+
     
     @IBAction func locatonSwitchTapped(_ sender: Any) {
         

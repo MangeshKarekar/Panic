@@ -10,7 +10,7 @@ import UIKit
 import ContactsUI
 import RealmSwift
 
-class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
+class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     private let paniCellID = "panicColorCell"
     private let panicColors = ["Red": Colors.panicRed, "Yellow":Colors.panicYellow, "Green ": Colors.panicGreen]
@@ -77,18 +77,5 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: contactsSegue, sender: colorResults?[indexPath.section])
     }
-    
-    
-    @IBAction func pressed(_ sender: UIButton){
-        let contactPicker = CNContactPickerViewController()
-        contactPicker.delegate = self
-        present(contactPicker, animated: true, completion: nil)
-    }
-    
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
-        
-        print(contacts)
-    }
-
 
 }

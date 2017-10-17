@@ -62,14 +62,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNG-gj-sq7">
-                                <rect key="frame" x="0.0" y="64" width="375" height="635"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="A87-IV-Bzn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="extraLight"/>
-                            </visualEffectView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-zp-TXv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +82,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uq2-ju-g4j">
                                                     <rect key="frame" x="306" y="11.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="locatonSwitchTapped:" destination="wOb-ZD-ewY" eventType="valueChanged" id="olC-Fb-9Nm"/>
+                                                        <action selector="locatonSwitchTapped:" destination="wOb-ZD-ewY" eventType="valueChanged" id="IQU-Tz-eOS"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -101,6 +93,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="Uq2-ju-g4j" secondAttribute="trailing" constant="20" id="oUb-CO-D2w"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationSwitch" destination="Uq2-ju-g4j" id="wvf-ok-6CY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="163" id="14w-bO-D7z" userLabel="MessageCell" customClass="MessageTableViewCell" customModule="Panic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="109.5" width="375" height="163"/>
@@ -115,9 +110,15 @@
                                                     <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="0.057550299657534248" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="LAT-0w-MZ5" id="qLy-vm-0FN"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageText" destination="PZy-33-7JH" id="ihj-da-81J"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactsCell" textLabel="ZF8-9z-eAU" detailTextLabel="kfG-dr-rmq" rowHeight="52" style="IBUITableViewCellStyleSubtitle" id="EDM-Rz-7hy" userLabel="ContactCell">
                                         <rect key="frame" x="0.0" y="272.5" width="375" height="52"/>
@@ -149,23 +150,28 @@
                                     <outlet property="delegate" destination="wOb-ZD-ewY" id="NJS-CS-vb0"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-0V-Ouo">
+                                <rect key="frame" x="140" y="622" width="94" height="30"/>
+                                <state key="normal" title="Add Contacts">
+                                    <color key="titleColor" red="0.63568395379999998" green="0.82872420550000003" blue="0.27068561320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addContactsPressed:" destination="wOb-ZD-ewY" eventType="touchUpInside" id="NAl-UP-EBg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="2ei-VV-k7C"/>
-                            <constraint firstItem="mNG-gj-sq7" firstAttribute="top" secondItem="mwC-OG-4kh" secondAttribute="top" id="AgF-fs-E6n"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="Axy-I8-Lbf"/>
-                            <constraint firstItem="mwC-OG-4kh" firstAttribute="top" secondItem="gW7-zp-TXv" secondAttribute="bottom" constant="-539" id="EhV-de-A1I"/>
-                            <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="gW7-zp-TXv" secondAttribute="bottom" constant="64" id="MVk-1a-MgZ"/>
+                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="top" secondItem="gW7-zp-TXv" secondAttribute="bottom" constant="19" id="HAC-Na-ffS"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="top" secondItem="mwC-OG-4kh" secondAttribute="top" id="NZe-Ze-bPK"/>
-                            <constraint firstItem="mNG-gj-sq7" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="fi2-5Y-5DO"/>
-                            <constraint firstItem="mNG-gj-sq7" firstAttribute="bottom" secondItem="mwC-OG-4kh" secondAttribute="bottom" constant="32" id="ox6-TX-AkU"/>
-                            <constraint firstItem="mNG-gj-sq7" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="yhu-M1-GfW"/>
+                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="centerX" secondItem="gW7-zp-TXv" secondAttribute="centerX" id="Xaj-uG-ZrB"/>
+                            <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="1Ks-0V-Ouo" secondAttribute="bottom" constant="15" id="ggY-0Y-vHp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mwC-OG-4kh"/>
                     </view>
                     <connections>
-                        <outlet property="locationSwitch" destination="Uq2-ju-g4j" id="jCN-W5-agh"/>
                         <outlet property="manageTable" destination="gW7-zp-TXv" id="zDl-1I-TyD"/>
                     </connections>
                 </viewController>

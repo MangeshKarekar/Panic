@@ -11,6 +11,7 @@ import UIKit
 class LocationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var locationSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
