@@ -14,12 +14,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var yellowView: CircleView!
     @IBOutlet weak var greenView: CircleView!
 
-    
-    
+    let manageController = ManageController.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navigationImage"), for: .compact)
         animateViews()
+        createColors()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,8 +34,13 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func createColors(){
+        do{
+            try manageController.createColors()
+        }catch{}
+    }
 
-    private func animateViews(){
+    func animateViews(){
         UIViewAnimations.shrink(view: redView)
         UIViewAnimations.shrink(view: yellowView)
         UIViewAnimations.shrink(view: greenView)

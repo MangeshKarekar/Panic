@@ -20,10 +20,17 @@
 		9EC7FCB51F8F8F48002B2A62 /* PanicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCB41F8F8F48002B2A62 /* PanicTests.swift */; };
 		9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCC01F8F9ACB002B2A62 /* CircleView.swift */; };
 		9EC7FCC51F8F9FBF002B2A62 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC7FCC41F8F9FBF002B2A62 /* UIViewAnimations.swift */; };
+		9EE46C6F1F961799002C4098 /* ContactsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE46C6E1F961799002C4098 /* ContactsEntity.swift */; };
+		9EE46C711F961816002C4098 /* PhoneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE46C701F961816002C4098 /* PhoneEntity.swift */; };
+		9EE46C731F961AEC002C4098 /* ColorsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE46C721F961AEC002C4098 /* ColorsEntity.swift */; };
+		9EE46C7A1F961C92002C4098 /* ManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE46C791F961C92002C4098 /* ManageController.swift */; };
+		9EE46C7D1F961D0B002C4098 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE46C7C1F961D0B002C4098 /* Repository.swift */; };
 		9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69C1F94FD5C0065539E /* Colors.swift */; };
 		9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F69E1F94FD7D0065539E /* Extensions.swift */; };
 		9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */; };
 		9EF9F6A41F950E280065539E /* Manage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9F6A31F950E270065539E /* Manage.storyboard */; };
+		BFDD0FA8270913FB09C4172C /* Pods_Panic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A322F3409BC1449B1BC87CCB /* Pods_Panic.framework */; };
+		DC3D1E8FF2F804B9E2852A7E /* Pods_PanicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04159336AEE9B91EE4BA450 /* Pods_PanicTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47661EDE16979447B2C28BF7 /* Pods-Panic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Panic/Pods-Panic.release.xcconfig"; sourceTree = "<group>"; };
+		7A66017AF3C866ACBA2443FC /* Pods-PanicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PanicTests/Pods-PanicTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E259C5F1F90C85D004019AC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -54,10 +63,19 @@
 		9EC7FCB61F8F8F48002B2A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EC7FCC01F8F9ACB002B2A62 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9EC7FCC41F8F9FBF002B2A62 /* UIViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
+		9EE46C6E1F961799002C4098 /* ContactsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsEntity.swift; sourceTree = "<group>"; };
+		9EE46C701F961816002C4098 /* PhoneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntity.swift; sourceTree = "<group>"; };
+		9EE46C721F961AEC002C4098 /* ColorsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsEntity.swift; sourceTree = "<group>"; };
+		9EE46C791F961C92002C4098 /* ManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageController.swift; sourceTree = "<group>"; };
+		9EE46C7C1F961D0B002C4098 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9EF9F69C1F94FD5C0065539E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9EF9F69E1F94FD7D0065539E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicLevelColorTableViewCell.swift; sourceTree = "<group>"; };
 		9EF9F6A31F950E270065539E /* Manage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manage.storyboard; sourceTree = "<group>"; };
+		9F9F391FD37CEBC7638A0DAA /* Pods-Panic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Panic/Pods-Panic.debug.xcconfig"; sourceTree = "<group>"; };
+		A322F3409BC1449B1BC87CCB /* Pods_Panic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04159336AEE9B91EE4BA450 /* Pods_PanicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PanicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE170E0A773CE91E183106C /* Pods-PanicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PanicTests/Pods-PanicTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDD0FA8270913FB09C4172C /* Pods_Panic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +91,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3D1E8FF2F804B9E2852A7E /* Pods_PanicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28780EDCF9E29F01C3FFEF76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F391FD37CEBC7638A0DAA /* Pods-Panic.debug.xcconfig */,
+				47661EDE16979447B2C28BF7 /* Pods-Panic.release.xcconfig */,
+				FAE170E0A773CE91E183106C /* Pods-PanicTests.debug.xcconfig */,
+				7A66017AF3C866ACBA2443FC /* Pods-PanicTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9E259C6A1F9103C1004019AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +147,8 @@
 				9EC7FC9E1F8F8F47002B2A62 /* Panic */,
 				9EC7FCB31F8F8F48002B2A62 /* PanicTests */,
 				9EC7FC9D1F8F8F47002B2A62 /* Products */,
+				28780EDCF9E29F01C3FFEF76 /* Pods */,
+				EF7EE7CFB4EAF1A3273F559D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				9EC7FC9F1F8F8F47002B2A62 /* AppDelegate.swift */,
+				9EE46C7B1F961CF6002C4098 /* RepositoryFunctions */,
+				9EE46C781F961C7D002C4098 /* Controller */,
+				9EE46C6D1F961766002C4098 /* Entity */,
 				9EC7FCC31F8F9FA5002B2A62 /* CustomAnimations */,
 				9EC7FCC21F8F9F93002B2A62 /* Extensions */,
 				9EC7FCBF1F8F9A95002B2A62 /* CustomClasses */,
@@ -177,12 +213,47 @@
 			path = CustomAnimations;
 			sourceTree = "<group>";
 		};
+		9EE46C6D1F961766002C4098 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9EE46C721F961AEC002C4098 /* ColorsEntity.swift */,
+				9EE46C6E1F961799002C4098 /* ContactsEntity.swift */,
+				9EE46C701F961816002C4098 /* PhoneEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9EE46C781F961C7D002C4098 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9EE46C791F961C92002C4098 /* ManageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9EE46C7B1F961CF6002C4098 /* RepositoryFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				9EE46C7C1F961D0B002C4098 /* Repository.swift */,
+			);
+			path = RepositoryFunctions;
+			sourceTree = "<group>";
+		};
 		9EF9F6A01F94FF390065539E /* custom cells */ = {
 			isa = PBXGroup;
 			children = (
 				9EF9F6A11F94FF7A0065539E /* PanicLevelColorTableViewCell.swift */,
 			);
 			path = "custom cells";
+			sourceTree = "<group>";
+		};
+		EF7EE7CFB4EAF1A3273F559D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A322F3409BC1449B1BC87CCB /* Pods_Panic.framework */,
+				B04159336AEE9B91EE4BA450 /* Pods_PanicTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EC7FCB91F8F8F48002B2A62 /* Build configuration list for PBXNativeTarget "Panic" */;
 			buildPhases = (
+				8E9A4CEF2739BD749CE19971 /* [CP] Check Pods Manifest.lock */,
 				9EC7FC981F8F8F47002B2A62 /* Sources */,
 				9EC7FC991F8F8F47002B2A62 /* Frameworks */,
 				9EC7FC9A1F8F8F47002B2A62 /* Resources */,
+				D96DAE25224159CEC2B776BC /* [CP] Embed Pods Frameworks */,
+				76FA1BE20D7A37CC1841EB5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,9 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EC7FCBC1F8F8F48002B2A62 /* Build configuration list for PBXNativeTarget "PanicTests" */;
 			buildPhases = (
+				1FC1365D97AFF41680C197CA /* [CP] Check Pods Manifest.lock */,
 				9EC7FCAC1F8F8F48002B2A62 /* Sources */,
 				9EC7FCAD1F8F8F48002B2A62 /* Frameworks */,
 				9EC7FCAE1F8F8F48002B2A62 /* Resources */,
+				8D873E25BB888DC83F5AC1CE /* [CP] Embed Pods Frameworks */,
+				406D479A04E475740B6C0D85 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,11 +362,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FC1365D97AFF41680C197CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		406D479A04E475740B6C0D85 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PanicTests/Pods-PanicTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76FA1BE20D7A37CC1841EB5A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Panic/Pods-Panic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D873E25BB888DC83F5AC1CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PanicTests/Pods-PanicTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E9A4CEF2739BD749CE19971 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D96DAE25224159CEC2B776BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Panic/Pods-Panic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9EC7FC981F8F8F47002B2A62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE46C731F961AEC002C4098 /* ColorsEntity.swift in Sources */,
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
 				9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */,
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
@@ -298,8 +469,12 @@
 				9EF9F6A21F94FF7A0065539E /* PanicLevelColorTableViewCell.swift in Sources */,
 				9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */,
 				9E259C601F90C85D004019AC /* RootViewController.swift in Sources */,
+				9EE46C6F1F961799002C4098 /* ContactsEntity.swift in Sources */,
 				9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */,
+				9EE46C7D1F961D0B002C4098 /* Repository.swift in Sources */,
+				9EE46C7A1F961C92002C4098 /* ManageController.swift in Sources */,
 				9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */,
+				9EE46C711F961816002C4098 /* PhoneEntity.swift in Sources */,
 				9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +626,7 @@
 		};
 		9EC7FCBA1F8F8F48002B2A62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F9F391FD37CEBC7638A0DAA /* Pods-Panic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +642,7 @@
 		};
 		9EC7FCBB1F8F8F48002B2A62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47661EDE16979447B2C28BF7 /* Pods-Panic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +658,7 @@
 		};
 		9EC7FCBD1F8F8F48002B2A62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAE170E0A773CE91E183106C /* Pods-PanicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +676,7 @@
 		};
 		9EC7FCBE1F8F8F48002B2A62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A66017AF3C866ACBA2443FC /* Pods-PanicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

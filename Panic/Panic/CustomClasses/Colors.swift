@@ -21,6 +21,10 @@ class Colors {
     private static let red = "FA2E31"
     private static let yellow = "FFD501"
     private static let green = "A2D345"
+    
+    static let redString = "Red"
+    static let greenString = "Green"
+    static let yellowString = "Yellow"
 
     static var panicRed: UIColor{
         get {
