@@ -62,23 +62,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg9-l0-QJW">
-                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdS-fF-KTp">
+                                <rect key="frame" x="-0.5" y="32" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GAZ-Ts-5Rj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="height" secondItem="R2H-ro-mEN" secondAttribute="height" id="8aC-lp-3Wg"/>
-                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="CY5-Xw-eYC"/>
-                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="TUF-m1-AC6"/>
-                            <constraint firstItem="Fg9-l0-QJW" firstAttribute="centerY" secondItem="mwC-OG-4kh" secondAttribute="centerY" id="WgD-o5-9UQ"/>
+                            <constraint firstItem="KdS-fF-KTp" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="J09-xr-NsQ"/>
+                            <constraint firstItem="KdS-fF-KTp" firstAttribute="height" secondItem="R2H-ro-mEN" secondAttribute="height" id="R2q-xm-QWz"/>
+                            <constraint firstItem="KdS-fF-KTp" firstAttribute="centerY" secondItem="mwC-OG-4kh" secondAttribute="centerY" id="nRF-2C-LAw"/>
+                            <constraint firstItem="KdS-fF-KTp" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="olP-Lj-HVa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mwC-OG-4kh"/>
                     </view>
-                    <connections>
-                        <outlet property="backgroundView" destination="Fg9-l0-QJW" id="j6F-0o-GFe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFN-Xd-N3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

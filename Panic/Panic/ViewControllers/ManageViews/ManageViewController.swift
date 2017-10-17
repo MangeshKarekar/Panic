@@ -42,6 +42,7 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == contactsSegue{
             let contactsViewController = segue.destination as! ContactsViewController
+            contactsViewController.colorEntity = sender as? ColorsEntity
         }
         
     }
@@ -74,7 +75,7 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // self.performSegue(withIdentifier: contactsSegue, sender: selectedColor)
+        self.performSegue(withIdentifier: contactsSegue, sender: colorResults?[indexPath.section])
     }
     
     

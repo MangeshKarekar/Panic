@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContactsViewController: UIViewController {
     
-    @IBOutlet weak var backgroundView: UIView!
+    var colorEntity: ColorsEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground() 
+        if let colorEntity = colorEntity{
+            setUI(forEntity: colorEntity)
+        }
         // Do any additional setup after loading the view.
     }
     
-    func setBackground(){
-        
+    func setUI(forEntity colorEntity: ColorsEntity){
+        self.view.backgroundColor = colorEntity.color
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
     }
 
     override func didReceiveMemoryWarning() {
