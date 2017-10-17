@@ -13,9 +13,13 @@ class ContactsViewController: UIViewController {
     
     var colorEntity: ColorsEntity?
     
+    var color: Color?
+    
+    @IBOutlet weak var manageTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let colorEntity = colorEntity{
+            
             setUI(forEntity: colorEntity)
         }
         // Do any additional setup after loading the view.
