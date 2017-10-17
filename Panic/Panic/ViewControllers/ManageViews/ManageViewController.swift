@@ -42,7 +42,6 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == contactsSegue{
             let contactsViewController = segue.destination as! ContactsViewController
-            contactsViewController.colorTheme = sender as? PanicColor
         }
         
     }
