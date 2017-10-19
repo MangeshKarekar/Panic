@@ -61,6 +61,17 @@ class Repository {
         }
     }
     
+    func saveColorEntity(_ colorEntity: ColorsEntity)throws{
+        do{
+            let realm = try getRealm()
+            try realm.write {
+                realm.add(colorEntity, update: true)
+            }
+        }catch{
+            throw error
+        }
+    }
+    
     //MARK: Common functions
     private func getRealm()throws -> Realm{
         

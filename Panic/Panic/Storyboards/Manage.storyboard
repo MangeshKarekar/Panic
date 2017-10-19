@@ -151,7 +151,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-0V-Ouo">
-                                <rect key="frame" x="140" y="622" width="94" height="30"/>
+                                <rect key="frame" x="80.5" y="622" width="94" height="30"/>
                                 <state key="normal" title="Add Contacts">
                                     <color key="titleColor" red="0.63568395379999998" green="0.82872420550000003" blue="0.27068561320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -159,14 +159,25 @@
                                     <action selector="addContactsPressed:" destination="wOb-ZD-ewY" eventType="touchUpInside" id="NAl-UP-EBg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2K-Ny-7vX">
+                                <rect key="frame" x="230.5" y="622" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.18039215689999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="wOb-ZD-ewY" eventType="touchUpInside" id="dG0-CE-Y1C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="2ei-VV-k7C"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="Axy-I8-Lbf"/>
+                            <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="a2K-Ny-7vX" secondAttribute="bottom" constant="15" id="EBM-vc-ze6"/>
                             <constraint firstItem="1Ks-0V-Ouo" firstAttribute="top" secondItem="gW7-zp-TXv" secondAttribute="bottom" constant="19" id="HAC-Na-ffS"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="top" secondItem="mwC-OG-4kh" secondAttribute="top" id="NZe-Ze-bPK"/>
-                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="centerX" secondItem="gW7-zp-TXv" secondAttribute="centerX" id="Xaj-uG-ZrB"/>
+                            <constraint firstItem="a2K-Ny-7vX" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" constant="60" id="VwR-ym-WLS"/>
+                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="centerX" secondItem="gW7-zp-TXv" secondAttribute="centerX" constant="-60" id="Xaj-uG-ZrB"/>
                             <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="1Ks-0V-Ouo" secondAttribute="bottom" constant="15" id="ggY-0Y-vHp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mwC-OG-4kh"/>

@@ -16,9 +16,12 @@ class ManageController {
     
     private let repository = Repository.sharedInstance
     
+    typealias colorsTuple = (red: Color?, yellow: Color?, green: Color?)
+    
     init(){}
     
     //MARK: create colors
+    
     func createColors() throws{
         try repository.createColors()
     }
@@ -35,7 +38,6 @@ class ManageController {
         return  convertColorsToModel(results: colors)
     }
     
-    typealias colorsTuple = (red: Color?, yellow: Color?, green: Color?)
     
     private func convertColorsToModel(results: Results<ColorsEntity>) -> colorsTuple{
         
@@ -57,7 +59,7 @@ class ManageController {
     }
     
     
-    func addContacts(cnContacts: [CNContact], completion:@escaping (_ contacts: List<ContactsEntity>)-> Void){
+    func getContacts(cnContacts: [CNContact], completion:@escaping (_ contacts: List<ContactsEntity>)-> Void){
         DispatchQueue.global().async {
             let contacts = List<ContactsEntity>()
             for contact in cnContacts{
@@ -74,5 +76,16 @@ class ManageController {
             }
             completion(contacts)
         }
+    }
+    
+    func saveColor(color: Color)throws{
+        let colorEntity = ColorsEntity()
+        colorEntity.name = color.name
+        colorEntity.message = color.message
+        for contact in color.contacts{
+            colorEntity.contacts.append(contact)
+        }
+        colorEntity.locationStatus = color.locationStatus
+        try repository.saveColorEntity(colorEntity)
     }
 }

@@ -55,6 +55,13 @@ extension UIAlertController{
         alert.addAction(okButton)
         view.present(alert, animated: true, completion: nil)
     }
+    
+    class func showSuccessAlert(withMessage message:String ,inView view: UIViewController){
+        let alert = UIAlertController(title: "Success", message:message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okButton)
+        view.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension UIActivityIndicatorView{

@@ -106,6 +106,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func getLocationCell(_ tableView: UITableView )-> LocationTableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: locationCellID) as! LocationTableViewCell
+        cell.locationSwitch.isOn = color!.locationStatus
         return cell
     }
     
@@ -127,14 +128,25 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         present(contactPicker, animated: true, completion: nil)
     }
     
-    @IBAction func locatonSwitchTapped(_ sender: Any) {
-        
+    @IBAction func locatonSwitchTapped(_ sender: UISwitch) {
+        color?.locationStatus = sender.isOn
+        let contactIndex = IndexSet(integer: locationSection)
+        manageTable.reloadSections(contactIndex, with: .automatic)
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        do{
+            try manageController.saveColor(color: color!)
+            showSuccess(withMessage: "Saved")
+        }catch{
+            showError(withMessage: "could not save. Please try again")
+        }
     }
     
     //MARK: contact UI delegate
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
         if contacts.count == 0{
-            showNoContactError()
+            showError(withMessage: "No Contacts Selected")
         }else{
             addContacts(cnContacts: contacts)
         }
@@ -144,14 +156,10 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         addContacts(cnContacts: [contact])
     }
     
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty){
-        // to implement
-    }
-
     func addContacts(cnContacts: [CNContact]){
         let activityIndicator = UIActivityIndicatorView.getActivity(withStyle: .gray)
         activityIndicator.startAnimating()
-        manageController.addContacts(cnContacts: cnContacts) {[weak self] (contacts) in
+        manageController.getContacts(cnContacts: cnContacts) {[weak self] (contacts) in
             self?.contacts = contacts
             self?.color!.contacts = contacts
             DispatchQueue.main.async {[weak self] in
@@ -163,9 +171,13 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         }
     }
     
-    private func showNoContactError(){
-        UIAlertController.showErrorAlert(withMessage: "No Contacts Selected", inView: self)
+    private func showError(withMessage message: String){
+        UIAlertController.showErrorAlert(withMessage: message, inView: self)
     }
 
+    private func showSuccess(withMessage message: String){
+        UIAlertController.showSuccessAlert(withMessage: message, inView: self)
+    }
 
+  
 }
