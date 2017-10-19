@@ -8,35 +8,52 @@
 
 import UIKit
 import MessageUI
+import CoreLocation
 
-class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegate {
-
+class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegate,CLLocationManagerDelegate {
+    
     @IBOutlet weak var redView: CircleView!
     @IBOutlet weak var yellowView: CircleView!
     @IBOutlet weak var greenView: CircleView!
-
+    
     let manageController = ManageController.sharedInstance
     var colors: (red: Color?, yellow: Color?, green: Color?)?
-        
+    var selectedColor: Color?
     let messageServiceNotAvailable = "SMS services are not available"
     
     let noContactsMessage = "No contacts added. Please add them first"
     let generalError = "Something went wrong. Please restart the app again"
     let messageSent = "Message sent"
     
+    let locationManager = CLLocationManager()
+    
+    typealias coordinates = (lattitude: String, longitude: String)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setupLocationServices()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        do{
+            colors = try manageController.getColorsTuple()
+        }catch{}
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupLocationServices(){
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            self.locationManager.requestWhenInUseAuthorization()
+        default: break
+        }
     }
     
     func setUI(){
@@ -53,13 +70,13 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             UIAlertController.showErrorAlert(withMessage: messageServiceNotAvailable, inView: self)
         }
     }
-
+    
     func createColors(){
         do{
             try manageController.createColors()
         }catch{}
     }
-
+    
     func animateViews(){
         UIViewAnimations.shrink(view: redView)
         UIViewAnimations.shrink(view: yellowView)
@@ -75,33 +92,59 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         
         switch sender.tag {
         case 1:
-            if let color = colors.red {
-                performAction(forColor: color)
-            }else{
-                showError(withMessage: generalError)
-            }
+            selectedColor = colors.red
+            getUserLocation()
         case 2:
-            if let color = colors.yellow {
-                performAction(forColor: color)
-            }else{
-                showError(withMessage: generalError)
-            }
+            selectedColor = colors.yellow
+            getUserLocation()
         case 3:
-            if let color = colors.green {
-                performAction(forColor: color)
-            }else{
-                showError(withMessage: generalError)
-            }
+            selectedColor = colors.green
+            getUserLocation()
         default:
             showError(withMessage: generalError)
         }
         
     }
     
-    func performAction(forColor color: Color){
-        var receipients = [String]()
+    //MARK: Location functions
+    
+    func getUserLocation(){
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways,.authorizedWhenInUse:
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.delegate = self
+            self.locationManager.startUpdatingLocation()
+        default: performActionWith(nil)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = manager.location{
+            locationManager.stopUpdatingLocation()
+            let coordinates = (lattitude: "\(location.coordinate.latitude)", longitude: "\(location.coordinate.longitude)")
+            performActionWith(coordinates)
+        }else{
+            performActionWith(nil)
+        }
+    }
+    
+    func performActionWith(_ userLocation: coordinates?){
         
-        for contact in color.contacts{
+        if !MFMessageComposeViewController.canSendText(){
+            UIAlertController.showErrorAlert(withMessage: messageServiceNotAvailable, inView: self)
+            return
+        }
+        
+        
+        guard let selectedColor = selectedColor else{
+            showError(withMessage: generalError)
+            return
+        }
+    
+        var receipients = [String]()
+        var message = selectedColor.message
+        
+        for contact in selectedColor.contacts{
             for phone in contact.phones{
                 receipients.append(phone.number)
             }
@@ -111,11 +154,28 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             showError(withMessage: noContactsMessage)
             return
         }
+        
+        message = selectedColor.message
+        
+        
+        
         let messageVC = MFMessageComposeViewController()
         messageVC.messageComposeDelegate = self
         messageVC.recipients = receipients
-        messageVC.body = color.message
+        messageVC.body = message
+        if selectedColor.locationStatus{
+            if let userLocation = userLocation{
+                message =  message + "And my location is at : \n" + getLocationLink(forUserCoordinates: userLocation)
+            }
+        }
+        messageVC.body = message
+        
         self.present(messageVC, animated: true, completion: nil)
+    }
+    
+    func getLocationLink(forUserCoordinates coordinates: coordinates) ->String{
+        let link = "https://maps.google.com/?saddr=%\(coordinates.lattitude)f,%\(coordinates.longitude)f"
+        return link
     }
     
     //MARK: Message delegate
