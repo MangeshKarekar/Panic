@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import ContactsUI
 
-class ContactsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate {
+class ContactsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate,MessageTableViewCellDelegate {
     
     var colorEntity: ColorsEntity?
     var contacts =  List<ContactsEntity>()
@@ -37,6 +37,13 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
             setUI(forEntity: colorEntity)
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        do{
+            try manageController.saveColor(color: color!)
+        }catch{}
     }
     
     func setUI(forEntity colorEntity: ColorsEntity){
@@ -112,6 +119,8 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func getMessageCell(_ tableView: UITableView )-> MessageTableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: messageCellID) as! MessageTableViewCell
+        cell.delegate = self
+        cell.messageText.text = color?.message
         return cell
     }
     
@@ -169,6 +178,10 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
 
             }
         }
+    }
+    
+    func MessageTableViewCell(_ message: String) {
+        color!.message = message
     }
     
     private func showError(withMessage message: String){

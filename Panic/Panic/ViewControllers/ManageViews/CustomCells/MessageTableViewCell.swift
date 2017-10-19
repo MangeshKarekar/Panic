@@ -8,14 +8,20 @@
 
 import UIKit
 
+protocol MessageTableViewCellDelegate: class {
+    func MessageTableViewCell(_ message: String)
+}
+
 class MessageTableViewCell: UITableViewCell,UITextViewDelegate{
 
     @IBOutlet weak var messageText: UITextView!
     
+    weak var delegate: MessageTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignKeyboard))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         toolBar.items = [doneButton]
         messageText.inputAccessoryView = toolBar
         // Initialization code
@@ -27,7 +33,8 @@ class MessageTableViewCell: UITableViewCell,UITextViewDelegate{
         // Configure the view for the selected state
     }
     
-    @objc func resignKeyboard(){
+    @objc func doneTapped(){
+        delegate?.MessageTableViewCell(messageText.text)
         messageText.resignFirstResponder()
     }
 }
