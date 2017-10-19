@@ -22,7 +22,36 @@ class ManageController {
         try repository.createColors()
     }
     
-    func getColors()throws ->Results<ColorsEntity>{
-        return try repository.getColors()
+    func getColors()throws -> Results<ColorsEntity>{
+        let colors = try repository.getColors()
+        return  colors
+    }
+    
+    
+    func getColorsTuple()throws ->colorsTuple{
+        
+        let colors = try repository.getColors()
+        return  convertColorsToModel(results: colors)
+    }
+    
+    typealias colorsTuple = (red: Color?, yellow: Color?, green: Color?)
+    
+    private func convertColorsToModel(results: Results<ColorsEntity>) -> colorsTuple{
+        
+        var red: Color?
+        var yellow: Color?
+        var green: Color?
+
+        if let redEntity = results.filter("name = '\(Colors.redString)'").first{
+             red = Color(colorEntity: redEntity)
+        }
+        if let yellowEntity = results.filter("name = '\(Colors.yellowString)'").first{
+            yellow = Color(colorEntity: yellowEntity)
+        }
+        if let greenEntity = results.filter("name = '\(Colors.greenString)'").first{
+            green = Color(colorEntity: greenEntity)
+        }
+
+        return (red: red, yellow: yellow, green: green)
     }
 }
