@@ -30,6 +30,11 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+    }
+    
     func configurePageController(){
         viewArray = [manageViewController,homeViewController,settingsViewController]
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

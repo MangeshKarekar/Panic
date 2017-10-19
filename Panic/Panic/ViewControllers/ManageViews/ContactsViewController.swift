@@ -49,6 +49,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     func setUI(forEntity colorEntity: ColorsEntity){
       //  self.view.backgroundColor = colorEntity.color
         color = Color(colorEntity: colorEntity)
+        self.navigationController?.navigationBar.barTintColor = color!.color
         contacts = color!.contacts
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import RealmSwift
 
 struct Color {
@@ -15,11 +16,13 @@ struct Color {
     var message: String
     var locationStatus: Bool
     var contacts: List<ContactsEntity>
+    var color: UIColor
     
     init(colorEntity: ColorsEntity) {
         self.name = colorEntity.name
         self.message = colorEntity.message
         self.locationStatus = colorEntity.locationStatus
         self.contacts = colorEntity.contacts
+        self.color = colorEntity.color
     }
 }

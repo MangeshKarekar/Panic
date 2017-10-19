@@ -28,6 +28,11 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
         panicColorKeys = [String](panicColors.keys)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
