@@ -11,5 +11,8 @@ import RealmSwift
 
 class ContactsEntity: Object{
     @objc dynamic var name = ""
-    let contact = List<PhoneEntity>()
+    let phones = List<PhoneEntity>()
+    override static func primaryKey() -> String? {
+        return "name"
+    }
 }

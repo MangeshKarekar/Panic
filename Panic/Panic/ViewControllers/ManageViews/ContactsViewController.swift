@@ -23,14 +23,17 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     let messageCellID = "MessageCell"
     let contactsCellID = "ContactsCell"
     
-    @IBOutlet weak var manageTable: UITableView!
+    let locationSection = 0
+    let messageSection = 1
+    let contactSection = 2
     
-
+    let manageController = ManageController.sharedInstance
+    
+    @IBOutlet weak var manageTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let colorEntity = colorEntity{
-            
             setUI(forEntity: colorEntity)
         }
         // Do any additional setup after loading the view.
@@ -38,6 +41,8 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func setUI(forEntity colorEntity: ColorsEntity){
       //  self.view.backgroundColor = colorEntity.color
+        color = Color(colorEntity: colorEntity)
+        contacts = color!.contacts
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,43 +68,40 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         switch section{
-        case 0: return "Location services"
-        case 1: return "Type your Panic message here"
-        case 2: return "Your Panic Contacts"
+        case locationSection: return "Location services"
+        case messageSection: return "Type your Panic message here"
+        case contactSection: return "Your Panic Contacts"
         default : return nil
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
-        case 0: return tableviewRows
-        case 1: return tableviewRows
-        case 2: return contacts.count
+        case locationSection: return tableviewRows
+        case messageSection: return tableviewRows
+        case contactSection: return contacts.count
         default : return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
-        case 0: return getLocationCell(tableView)
-        case 1: return getMessageCell(tableView)
-        case 2: return getContactCellFor(indexPath.row)
+        case locationSection: return getLocationCell(tableView)
+        case messageSection: return getMessageCell(tableView)
+        case contactSection: return getContactCellFor(indexPath.row)
         default : return UITableViewCell()
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         switch indexPath.section{
-        case 0: return 55
-        case 1: return 162
-        case 2: return 55
+        case locationSection: return 55
+        case messageSection: return 162
+        case contactSection: return 55
         default : return 55
         }
-        
     }
     
     func getLocationCell(_ tableView: UITableView )-> LocationTableViewCell{
@@ -115,7 +117,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     func getContactCellFor(_ index: Int) -> UITableViewCell{
         let cell = manageTable.dequeueReusableCell(withIdentifier: contactsCellID)
         cell?.textLabel?.text = contacts[index].name
-        cell?.detailTextLabel?.text = contacts[index].contact.first?.number
+        cell?.detailTextLabel?.text = contacts[index].phones.first?.number
         return cell!
     }
     
@@ -125,13 +127,45 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         present(contactPicker, animated: true, completion: nil)
     }
     
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
-        
-        print(contacts)
-    }
-
-    
     @IBAction func locatonSwitchTapped(_ sender: Any) {
         
     }
+    
+    //MARK: contact UI delegate
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]){
+        if contacts.count == 0{
+            showNoContactError()
+        }else{
+            addContacts(cnContacts: contacts)
+        }
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact){
+        addContacts(cnContacts: [contact])
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty){
+        // to implement
+    }
+
+    func addContacts(cnContacts: [CNContact]){
+        let activityIndicator = UIActivityIndicatorView.getActivity(withStyle: .gray)
+        activityIndicator.startAnimating()
+        manageController.addContacts(cnContacts: cnContacts) {[weak self] (contacts) in
+            self?.contacts = contacts
+            self?.color!.contacts = contacts
+            DispatchQueue.main.async {[weak self] in
+                activityIndicator.stopAnimating()
+                let contactIndex = IndexSet(integer: (self?.contactSection)!)
+                self?.manageTable.reloadSections(contactIndex, with: .automatic)
+
+            }
+        }
+    }
+    
+    private func showNoContactError(){
+        UIAlertController.showErrorAlert(withMessage: "No Contacts Selected", inView: self)
+    }
+
+
 }

@@ -22,8 +22,11 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navigationImage"), for: .compact)
         animateViews()
         createColors()
-        let colors = try! manageController.getColorsTuple()
+        do{
+        let colors = try manageController.getColorsTuple()
         print(colors)
+        }catch{}
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

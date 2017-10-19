@@ -46,3 +46,23 @@ extension UIColor{
         return yellowHex.colorFromHex(alpha: 1.0)
     }
 }
+
+extension UIAlertController{
+
+   class func showErrorAlert(withMessage message:String ,inView view: UIViewController){
+        let alert = UIAlertController(title: "Error", message:message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okButton)
+        view.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UIActivityIndicatorView{
+    
+   class func getActivity(withStyle style: UIActivityIndicatorViewStyle) ->UIActivityIndicatorView{
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: style)
+        activity.hidesWhenStopped = true
+        return activity
+    }
+    
+}

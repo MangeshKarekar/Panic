@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Contacts
 
 class ManageController {
     
@@ -53,5 +54,25 @@ class ManageController {
         }
 
         return (red: red, yellow: yellow, green: green)
+    }
+    
+    
+    func addContacts(cnContacts: [CNContact], completion:@escaping (_ contacts: List<ContactsEntity>)-> Void){
+        DispatchQueue.global().async {
+            let contacts = List<ContactsEntity>()
+            for contact in cnContacts{
+                let name = contact.givenName + " " + contact.familyName
+                let contactEntity = ContactsEntity()
+                contactEntity.name = name
+                for phone in contact.phoneNumbers{
+                    let phoneEntity = PhoneEntity()
+                    phoneEntity.name = name
+                    phoneEntity.number = phone.value.stringValue
+                    contactEntity.phones.append(phoneEntity)
+                }
+                contacts.append(contactEntity)
+            }
+            completion(contacts)
+        }
     }
 }

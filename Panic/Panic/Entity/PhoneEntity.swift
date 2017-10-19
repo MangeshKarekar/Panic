@@ -12,4 +12,7 @@ import RealmSwift
 class PhoneEntity: Object{
     @objc dynamic var name = ""
     @objc dynamic var number = ""
+    override static func primaryKey() -> String? {
+        return "name"
+    }
 }
