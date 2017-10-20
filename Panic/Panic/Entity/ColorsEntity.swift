@@ -15,8 +15,6 @@ class ColorsEntity: Object {
     @objc dynamic var name = ""
     @objc dynamic var message = "Please help me."
     @objc dynamic var locationStatus = false
-    let contacts = List<ContactsEntity>()
-    
     var color: UIColor{
         get{
             switch name{
@@ -27,7 +25,6 @@ class ColorsEntity: Object {
             }
         }
     }
-    
     
     override static func primaryKey() -> String? {
         return "name"

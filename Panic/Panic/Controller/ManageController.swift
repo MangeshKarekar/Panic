@@ -105,9 +105,6 @@ class ManageController {
         let colorEntity = ColorsEntity()
         colorEntity.name = color.name
         colorEntity.message = color.message
-        for contact in color.contacts{
-            colorEntity.contacts.append(contact)
-        }
         colorEntity.locationStatus = color.locationStatus
         try repository.saveColorEntity(colorEntity)
     }

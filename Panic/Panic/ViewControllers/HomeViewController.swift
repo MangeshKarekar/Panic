@@ -144,7 +144,9 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         var receipients = [String]()
         var message = selectedColor.message
         
-        for contact in selectedColor.contacts{
+        let contacts = try! manageController.getContacts(forColor: selectedColor.name)
+        
+        for contact in contacts{
             for phone in contact.phones{
                 receipients.append(phone.number)
             }
