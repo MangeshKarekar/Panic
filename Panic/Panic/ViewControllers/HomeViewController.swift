@@ -165,7 +165,10 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         messageVC.body = message
         if selectedColor.locationStatus{
             if let userLocation = userLocation{
-                message =  message + "And my location is at : \n" + getLocationLink(forUserCoordinates: userLocation)
+                let link = getLocationLink(forUserCoordinates: userLocation)
+                let locationURL = URL(string:link)
+                messageVC.addAttachmentURL(locationURL!, withAlternateFilename: "link")
+                message =  message + "And my location is : \n" + link
             }
         }
         messageVC.body = message
@@ -174,7 +177,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     }
     
     func getLocationLink(forUserCoordinates coordinates: coordinates) ->String{
-        let link = "https://maps.google.com/?saddr=%\(coordinates.lattitude)f,%\(coordinates.longitude)f"
+       let link = "http://maps.apple.com/?ll=\(coordinates.lattitude),\(coordinates.longitude)"
         return link
     }
     
