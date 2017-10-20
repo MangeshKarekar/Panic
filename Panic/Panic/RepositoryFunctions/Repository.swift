@@ -16,7 +16,7 @@ class Repository {
     init(){}
     
     func createColors()throws{
-
+        
         do{
             let realm = try getRealm()
             let colors = realm.objects(ColorsEntity.self)
@@ -71,6 +71,19 @@ class Repository {
             throw error
         }
     }
+    
+    func addOrupdateContacts(_ contacts: [ContactsEntity] ,forColor colorName: String)throws{
+        let realm = try getRealm()
+        try realm.write {
+            realm.add(contacts, update: true)
+        }
+    }
+    
+    func getContacts(forColor color: String)throws -> Results<ContactsEntity>{
+        let realm = try getRealm()
+        return realm.objects(ContactsEntity.self).filter("color = '\(color)'")
+    }
+    
     
     //MARK: Common functions
     private func getRealm()throws -> Realm{

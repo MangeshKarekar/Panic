@@ -78,6 +78,29 @@ class ManageController {
         }
     }
     
+    
+    func addOrupdateContacts(_ contacts: [CNContact] ,forColor colorName: String)throws{
+        let contactEntities:[ContactsEntity] = contacts.map{
+            let name = $0.givenName + " " + $0.familyName
+            let contactEntity = ContactsEntity()
+            contactEntity.name = name
+            contactEntity.color = colorName
+            for phone in $0.phoneNumbers{
+                let phoneEntity = PhoneEntity()
+                phoneEntity.name = name
+                phoneEntity.number = phone.value.stringValue
+                contactEntity.phones.append(phoneEntity)
+            }
+            return contactEntity
+        }
+        try repository.addOrupdateContacts(contactEntities, forColor: colorName)
+    }
+    
+    func getContacts(forColor color: String)throws->Results<ContactsEntity>{
+        
+        return try repository.getContacts(forColor: color)
+    }
+    
     func saveColor(color: Color)throws{
         let colorEntity = ColorsEntity()
         colorEntity.name = color.name

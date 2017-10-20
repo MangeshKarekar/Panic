@@ -13,9 +13,9 @@ import ContactsUI
 class ContactsViewController: UIViewController,UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate,MessageTableViewCellDelegate {
     
     var colorEntity: ColorsEntity?
-    var contacts =  List<ContactsEntity>()
     var color: Color?
-    
+    var contactsResults: Results<ContactsEntity>?
+
     let tableSections = 3
     let tableviewRows = 1
     
@@ -29,7 +29,15 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     let manageController = ManageController.sharedInstance
     
+    let contactSaveError = "There was error saving contacts"
+    
+    var contactsResultsNotification: NotificationToken? = nil
+    
     @IBOutlet weak var manageTable: UITableView!
+    
+    let activityIndicator = UIActivityIndicatorView.getActivity(withStyle: .gray)
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +55,42 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     func setUI(forEntity colorEntity: ColorsEntity){
-      //  self.view.backgroundColor = colorEntity.color
         color = Color(colorEntity: colorEntity)
         self.navigationController?.navigationBar.barTintColor = color!.color
-        contacts = color!.contacts
+        do{
+            contactsResults = try manageController.getContacts(forColor: color!.name)
+            setRealmNotificationsForContacts()
+        }catch{// to do
+        }
+    }
+    
+    func setRealmNotificationsForContacts(){
+        
+        contactsResultsNotification = contactsResults?.observe({[weak self] (changes: RealmCollectionChange) in
+            
+            guard let tableView = self?.manageTable else { return }
+            
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 2) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 2)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 2) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                print("\(error)")
+            }
+        })
+    }
+    
+    deinit {
+        contactsResultsNotification?.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,7 +128,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         switch section{
         case locationSection: return tableviewRows
         case messageSection: return tableviewRows
-        case contactSection: return contacts.count
+        case contactSection: if let contactsResults = contactsResults {return contactsResults.count} else {return 0}
         default : return 0
         }
     }
@@ -127,8 +167,10 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func getContactCellFor(_ index: Int) -> UITableViewCell{
         let cell = manageTable.dequeueReusableCell(withIdentifier: contactsCellID)
-        cell?.textLabel?.text = contacts[index].name
-        cell?.detailTextLabel?.text = contacts[index].phones.first?.number
+        if let contactsResults = contactsResults{
+        cell?.textLabel?.text = contactsResults[index].name
+        cell?.detailTextLabel?.text = contactsResults[index].phones.first?.number
+        }
         return cell!
     }
     
@@ -158,26 +200,20 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         if contacts.count == 0{
             showError(withMessage: "No Contacts Selected")
         }else{
-            addContacts(cnContacts: contacts)
+            saveContacts(contacts)
         }
     }
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact){
-        addContacts(cnContacts: [contact])
+        saveContacts([contact])
     }
     
-    func addContacts(cnContacts: [CNContact]){
-        let activityIndicator = UIActivityIndicatorView.getActivity(withStyle: .gray)
-        activityIndicator.startAnimating()
-        manageController.getContacts(cnContacts: cnContacts) {[weak self] (contacts) in
-            self?.contacts = contacts
-            self?.color!.contacts = contacts
-            DispatchQueue.main.async {[weak self] in
-                activityIndicator.stopAnimating()
-                let contactIndex = IndexSet(integer: (self?.contactSection)!)
-                self?.manageTable.reloadSections(contactIndex, with: .automatic)
-
-            }
+    
+    func saveContacts(_ cnContacts: [CNContact]){
+        do{
+            try manageController.addOrupdateContacts(cnContacts, forColor: color!.name)
+        }catch{
+            showError(withMessage: contactSaveError)
         }
     }
     
