@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-zp-TXv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="529"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="54" id="Ujk-Yp-wtZ" userLabel="LocationCell" customClass="LocationTableViewCell" customModule="Panic" customModuleProvider="target">
@@ -97,16 +97,15 @@
                                             <outlet property="locationSwitch" destination="Uq2-ju-g4j" id="wvf-ok-6CY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="163" id="14w-bO-D7z" userLabel="MessageCell" customClass="MessageTableViewCell" customModule="Panic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="109.5" width="375" height="163"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="113" id="14w-bO-D7z" userLabel="MessageCell" customClass="MessageTableViewCell" customModule="Panic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="109.5" width="375" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14w-bO-D7z" id="LAT-0w-MZ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-33-7JH">
-                                                    <rect key="frame" x="14" y="8" width="353" height="147"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-33-7JH">
+                                                    <rect key="frame" x="10" y="10" width="355" height="92.5"/>
                                                     <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="0.057550299657534248" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -115,13 +114,19 @@
                                                     </connections>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PZy-33-7JH" firstAttribute="centerX" secondItem="LAT-0w-MZ5" secondAttribute="centerX" id="ewu-II-kbh"/>
+                                                <constraint firstItem="PZy-33-7JH" firstAttribute="height" secondItem="LAT-0w-MZ5" secondAttribute="height" constant="-20" id="nIO-zA-a1D"/>
+                                                <constraint firstItem="PZy-33-7JH" firstAttribute="centerY" secondItem="LAT-0w-MZ5" secondAttribute="centerY" id="wAR-PI-lv8"/>
+                                                <constraint firstItem="PZy-33-7JH" firstAttribute="width" secondItem="LAT-0w-MZ5" secondAttribute="width" constant="-20" id="xmM-qy-p1o"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageText" destination="PZy-33-7JH" id="ihj-da-81J"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactsCell" textLabel="ZF8-9z-eAU" detailTextLabel="kfG-dr-rmq" rowHeight="52" style="IBUITableViewCellStyleSubtitle" id="EDM-Rz-7hy" userLabel="ContactCell">
-                                        <rect key="frame" x="0.0" y="272.5" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EDM-Rz-7hy" id="WLN-bp-uje">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
@@ -150,22 +155,18 @@
                                     <outlet property="delegate" destination="wOb-ZD-ewY" id="NJS-CS-vb0"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-0V-Ouo">
-                                <rect key="frame" x="80.5" y="622" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ks-0V-Ouo" customClass="CurvedButton" customModule="Panic" customModuleProvider="target">
+                                <rect key="frame" x="127.5" y="612" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="lPV-1L-tDg"/>
+                                    <constraint firstAttribute="height" constant="40" id="rgh-ZN-UjD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Add Contacts">
-                                    <color key="titleColor" red="0.63568395379999998" green="0.82872420550000003" blue="0.27068561320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="addContactsPressed:" destination="wOb-ZD-ewY" eventType="touchUpInside" id="NAl-UP-EBg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2K-Ny-7vX">
-                                <rect key="frame" x="230.5" y="622" width="34" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.98039215690000003" green="0.18039215689999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveTapped:" destination="wOb-ZD-ewY" eventType="touchUpInside" id="dG0-CE-Y1C"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,16 +174,15 @@
                         <constraints>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="width" secondItem="R2H-ro-mEN" secondAttribute="width" id="2ei-VV-k7C"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" id="Axy-I8-Lbf"/>
-                            <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="a2K-Ny-7vX" secondAttribute="bottom" constant="15" id="EBM-vc-ze6"/>
                             <constraint firstItem="1Ks-0V-Ouo" firstAttribute="top" secondItem="gW7-zp-TXv" secondAttribute="bottom" constant="19" id="HAC-Na-ffS"/>
                             <constraint firstItem="gW7-zp-TXv" firstAttribute="top" secondItem="mwC-OG-4kh" secondAttribute="top" id="NZe-Ze-bPK"/>
-                            <constraint firstItem="a2K-Ny-7vX" firstAttribute="centerX" secondItem="mwC-OG-4kh" secondAttribute="centerX" constant="60" id="VwR-ym-WLS"/>
-                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="centerX" secondItem="gW7-zp-TXv" secondAttribute="centerX" constant="-60" id="Xaj-uG-ZrB"/>
+                            <constraint firstItem="1Ks-0V-Ouo" firstAttribute="centerX" secondItem="gW7-zp-TXv" secondAttribute="centerX" id="Xaj-uG-ZrB"/>
                             <constraint firstItem="mwC-OG-4kh" firstAttribute="bottom" secondItem="1Ks-0V-Ouo" secondAttribute="bottom" constant="15" id="ggY-0Y-vHp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mwC-OG-4kh"/>
                     </view>
                     <connections>
+                        <outlet property="contactButton" destination="1Ks-0V-Ouo" id="1Yi-82-IfS"/>
                         <outlet property="manageTable" destination="gW7-zp-TXv" id="zDl-1I-TyD"/>
                     </connections>
                 </viewController>

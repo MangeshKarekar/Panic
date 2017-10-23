@@ -34,6 +34,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     var contactsResultsNotification: NotificationToken? = nil
     
     @IBOutlet weak var manageTable: UITableView!
+    @IBOutlet weak var contactButton: CurvedButton!
     
     let activityIndicator = UIActivityIndicatorView.getActivity(withStyle: .gray)
 
@@ -57,6 +58,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     func setUI(forEntity colorEntity: ColorsEntity){
         color = Color(colorEntity: colorEntity)
         self.navigationController?.navigationBar.barTintColor = color!.color
+        contactButton.backgroundColor = color!.color
         do{
             contactsResults = try manageController.getContacts(forColor: color!.name)
             setRealmNotificationsForContacts()
@@ -146,7 +148,7 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section{
         case locationSection: return 55
-        case messageSection: return 162
+        case messageSection: return 126
         case contactSection: return 55
         default : return 55
         }

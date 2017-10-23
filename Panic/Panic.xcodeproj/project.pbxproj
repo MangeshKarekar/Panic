@@ -11,6 +11,7 @@
 		9E259C691F910309004019AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E259C681F910309004019AC /* Home.storyboard */; };
 		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
+		9E48D2B01F9E306600DB2D4D /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */; };
 		9E5BBE631F963D300031A635 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE621F963D300031A635 /* Color.swift */; };
 		9E5BBE661F964D590031A635 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */; };
 		9E5BBE681F964D680031A635 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE671F964D680031A635 /* MessageTableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		9E5BBE621F963D300031A635 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		9E5BBE671F964D680031A635 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC7FCC01F8F9ACB002B2A62 /* CircleView.swift */,
+				9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */,
 				9EF9F69C1F94FD5C0065539E /* Colors.swift */,
 			);
 			path = CustomClasses;
@@ -489,6 +492,7 @@
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
 				9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */,
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
+				9E48D2B01F9E306600DB2D4D /* CustomButtons.swift in Sources */,
 				9E5BBE681F964D680031A635 /* MessageTableViewCell.swift in Sources */,
 				9E5BBE631F963D300031A635 /* Color.swift in Sources */,
 				9EF9F69D1F94FD5C0065539E /* Colors.swift in Sources */,
