@@ -114,5 +114,14 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func editButtonTapped(_ sender: Any) {
+        self.pageViewController.setViewControllers([manageViewController], direction: .forward, animated: false, completion: {done in })
+        mainPageControl.currentPage = 0
+    }
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        self.pageViewController.setViewControllers([settingsViewController], direction: .forward, animated: false, completion: {done in })
+        mainPageControl.currentPage = 2
 
+    }
 }
