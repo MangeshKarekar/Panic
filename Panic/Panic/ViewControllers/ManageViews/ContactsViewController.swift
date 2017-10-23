@@ -152,6 +152,22 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == contactSection{
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if indexPath.section == contactSection{
+            if let contactsResult = contactsResults{
+                deleteContact(contactsResult[indexPath.row])
+            }
+        }
+    }
+    
     func getLocationCell(_ tableView: UITableView )-> LocationTableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: locationCellID) as! LocationTableViewCell
         cell.locationSwitch.isOn = color!.locationStatus
@@ -215,6 +231,16 @@ class ContactsViewController: UIViewController,UITableViewDataSource, UITableVie
         }catch{
             showError(withMessage: contactSaveError)
         }
+    }
+    
+    func deleteContact(_ contact: ContactsEntity){
+        
+        do{
+           try  manageController.deleteContact(forName: contact.name)
+        }catch{
+            showError(withMessage: "There was error deleting the contact. Please try again.")
+        }
+        
     }
     
     func MessageTableViewCell(_ message: String) {

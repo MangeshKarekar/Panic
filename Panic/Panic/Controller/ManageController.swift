@@ -101,6 +101,10 @@ class ManageController {
         return try repository.getContacts(forColor: color)
     }
     
+    func deleteContact(forName name: String)throws{
+        try repository.deleteContact(forName: name)
+    }
+    
     func saveColor(color: Color)throws{
         let colorEntity = ColorsEntity()
         colorEntity.name = color.name

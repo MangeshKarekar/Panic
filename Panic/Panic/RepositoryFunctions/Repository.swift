@@ -84,6 +84,14 @@ class Repository {
         return realm.objects(ContactsEntity.self).filter("color = '\(color)'")
     }
     
+    func deleteContact(forName name: String)throws{
+        let realm = try getRealm()
+        let contacts = realm.objects(ContactsEntity.self).filter("name = '\(name)'")
+        try realm.write {
+            realm.delete(contacts)
+        }
+    }
+    
     
     //MARK: Common functions
     private func getRealm()throws -> Realm{
