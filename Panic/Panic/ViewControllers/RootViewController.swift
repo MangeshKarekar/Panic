@@ -24,11 +24,18 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
 
     var selectedIndex = 1
     
+    var titles = [0:"Edit",1:"Home",2:"Settings"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePageController()
         // Do any additional setup after loading the view.
     }
+    
+    func setTitle(with title: String?){
+        self.title = title
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,6 +54,7 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
         configurePageControl()
+        setTitle(with: titles[1])
 
     }
     
@@ -102,6 +110,7 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         
         if completed{
             mainPageControl.currentPage = selectedIndex
+            setTitle(with: titles[selectedIndex])
         }
     }
     
