@@ -31,12 +31,14 @@
                         <viewLayoutGuide key="safeArea" id="0py-Gc-Sdk"/>
                     </view>
                     <navigationItem key="navigationItem" id="EKt-F1-Nd1">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="1kz-H6-5Qg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="edit" id="1kz-H6-5Qg">
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editButtonTapped:" destination="7WF-46-wEg" id="Ijv-mH-ekP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="EEs-ps-aFM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="EEs-ps-aFM">
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="settingsButtonTapped:" destination="7WF-46-wEg" id="pzs-9z-JuO"/>
                             </connections>
@@ -92,4 +94,8 @@
             <point key="canvasLocation" x="943.20000000000005" y="150"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit" width="28" height="28"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
 </document>

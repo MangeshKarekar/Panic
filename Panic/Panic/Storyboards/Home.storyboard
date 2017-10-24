@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,78 +17,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-Oe-rz7" userLabel="RedView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                <rect key="frame" x="97.5" y="84" width="180" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O6J-uw-5t5">
+                                <rect key="frame" x="97.5" y="95.5" width="180" height="540.5"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-Ml-L6E">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                        <state key="normal" image="ambulance"/>
-                                        <connections>
-                                            <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="ZVd-KE-jxM"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-Oe-rz7" userLabel="RedView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="YyE-GP-4Qy">
+                                                <rect key="frame" x="-0.5" y="0.0" width="180" height="163.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-Ml-L6E">
+                                                <rect key="frame" x="-0.5" y="0.0" width="180" height="163.5"/>
+                                                <state key="normal" image="ambulance"/>
+                                                <connections>
+                                                    <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="ZVd-KE-jxM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="YyE-GP-4Qy" firstAttribute="height" secondItem="Aul-Oe-rz7" secondAttribute="height" id="1TY-fD-9Yl"/>
+                                            <constraint firstItem="ehT-Ml-L6E" firstAttribute="centerY" secondItem="Aul-Oe-rz7" secondAttribute="centerY" id="3T7-aP-CQ0"/>
+                                            <constraint firstItem="YyE-GP-4Qy" firstAttribute="centerX" secondItem="Aul-Oe-rz7" secondAttribute="centerX" id="AhG-Eh-UUj"/>
+                                            <constraint firstItem="ehT-Ml-L6E" firstAttribute="width" secondItem="Aul-Oe-rz7" secondAttribute="width" id="Bs1-RW-rWu"/>
+                                            <constraint firstItem="YyE-GP-4Qy" firstAttribute="centerY" secondItem="Aul-Oe-rz7" secondAttribute="centerY" id="UtA-Jg-IPo"/>
+                                            <constraint firstItem="YyE-GP-4Qy" firstAttribute="width" secondItem="Aul-Oe-rz7" secondAttribute="width" id="cnf-U3-m1u"/>
+                                            <constraint firstItem="ehT-Ml-L6E" firstAttribute="height" secondItem="Aul-Oe-rz7" secondAttribute="height" id="pte-Rg-xhD"/>
+                                            <constraint firstItem="ehT-Ml-L6E" firstAttribute="centerX" secondItem="Aul-Oe-rz7" secondAttribute="centerX" id="vbK-vt-Nm9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-Zp-lz4" userLabel="YellowView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="188.5" width="180" height="163.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow" translatesAutoresizingMaskIntoConstraints="NO" id="ZaT-Xg-Go4">
+                                                <rect key="frame" x="-0.5" y="-0.5" width="180" height="163.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-J0-TiV">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                                <state key="normal" image="location"/>
+                                                <connections>
+                                                    <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="WoP-wt-aCl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" id="74q-nH-7l1"/>
+                                            <constraint firstItem="ZaT-Xg-Go4" firstAttribute="centerX" secondItem="Veg-Zp-lz4" secondAttribute="centerX" id="F45-L6-2Kz"/>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="centerX" secondItem="Veg-Zp-lz4" secondAttribute="centerX" id="KUa-kF-AOu"/>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="gN3-Iv-U3l"/>
+                                            <constraint firstItem="ZaT-Xg-Go4" firstAttribute="centerY" secondItem="Veg-Zp-lz4" secondAttribute="centerY" id="ts6-lI-bLp"/>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="centerY" secondItem="Veg-Zp-lz4" secondAttribute="centerY" id="vug-SA-nDn"/>
+                                            <constraint firstItem="ZaT-Xg-Go4" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="yTc-Yj-8da"/>
+                                            <constraint firstItem="ZaT-Xg-Go4" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" id="yeW-9x-In5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-Aw-hoW" userLabel="GreenView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="377" width="180" height="163.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-3J-lqT">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-2i-CVe">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                                <state key="normal" image="message"/>
+                                                <connections>
+                                                    <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="1PA-z5-iks"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerY" secondItem="5xs-Aw-hoW" secondAttribute="centerY" id="1Hf-O0-KOP"/>
+                                            <constraint firstItem="6gV-3J-lqT" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="BNe-OJ-fvz"/>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="width" secondItem="5xs-Aw-hoW" secondAttribute="width" id="KnP-Gw-M6I"/>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" id="Ow1-tO-JJO"/>
+                                            <constraint firstItem="6gV-3J-lqT" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" id="PTq-Hz-8og"/>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="WF2-54-sfP"/>
+                                            <constraint firstItem="6gV-3J-lqT" firstAttribute="centerY" secondItem="5xs-Aw-hoW" secondAttribute="centerY" id="aQS-Xj-Mk6"/>
+                                            <constraint firstItem="6gV-3J-lqT" firstAttribute="width" secondItem="5xs-Aw-hoW" secondAttribute="width" id="jqv-FO-7Og"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98105663060000003" green="0.18144097919999999" blue="0.19153204560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="ehT-Ml-L6E" firstAttribute="centerY" secondItem="Aul-Oe-rz7" secondAttribute="centerY" id="3T7-aP-CQ0"/>
-                                    <constraint firstItem="ehT-Ml-L6E" firstAttribute="width" secondItem="Aul-Oe-rz7" secondAttribute="width" id="Bs1-RW-rWu"/>
-                                    <constraint firstAttribute="width" constant="180" id="iTc-2p-r3O"/>
-                                    <constraint firstAttribute="height" constant="180" id="m1q-JZ-Usy"/>
-                                    <constraint firstItem="ehT-Ml-L6E" firstAttribute="height" secondItem="Aul-Oe-rz7" secondAttribute="height" id="pte-Rg-xhD"/>
-                                    <constraint firstItem="ehT-Ml-L6E" firstAttribute="centerX" secondItem="Aul-Oe-rz7" secondAttribute="centerX" id="vbK-vt-Nm9"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-Zp-lz4" userLabel="YellowView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                <rect key="frame" x="35" y="294" width="145" height="145"/>
-                                <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-J0-TiV">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                        <state key="normal" image="location"/>
-                                        <connections>
-                                            <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="WoP-wt-aCl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.83529411764705885" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="FsV-J0-TiV" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" id="74q-nH-7l1"/>
-                                    <constraint firstItem="FsV-J0-TiV" firstAttribute="centerX" secondItem="Veg-Zp-lz4" secondAttribute="centerX" id="KUa-kF-AOu"/>
-                                    <constraint firstItem="FsV-J0-TiV" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="gN3-Iv-U3l"/>
-                                    <constraint firstItem="FsV-J0-TiV" firstAttribute="centerY" secondItem="Veg-Zp-lz4" secondAttribute="centerY" id="vug-SA-nDn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-Aw-hoW" userLabel="GreenView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                <rect key="frame" x="195" y="469" width="145" height="145"/>
-                                <subviews>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-2i-CVe">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                        <state key="normal" image="message"/>
-                                        <connections>
-                                            <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="1PA-z5-iks"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.63529411764705879" green="0.82745098039215681" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerY" secondItem="5xs-Aw-hoW" secondAttribute="centerY" id="1Hf-O0-KOP"/>
-                                    <constraint firstItem="Ozr-2i-CVe" firstAttribute="width" secondItem="5xs-Aw-hoW" secondAttribute="width" id="KnP-Gw-M6I"/>
-                                    <constraint firstItem="Ozr-2i-CVe" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" id="Ow1-tO-JJO"/>
-                                    <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="WF2-54-sfP"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5xs-Aw-hoW" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="0WQ-7e-jYG"/>
-                            <constraint firstItem="5xs-Aw-hoW" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" id="3ze-4u-5fG"/>
-                            <constraint firstItem="Aul-Oe-rz7" firstAttribute="top" secondItem="FCi-gl-O10" secondAttribute="top" constant="20" id="94Y-gV-R1i"/>
-                            <constraint firstItem="Veg-Zp-lz4" firstAttribute="top" secondItem="Aul-Oe-rz7" secondAttribute="bottom" constant="30" id="Eis-pm-GuQ"/>
-                            <constraint firstItem="5xs-Aw-hoW" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" constant="80" id="UOE-yw-Wpi"/>
-                            <constraint firstItem="Veg-Zp-lz4" firstAttribute="width" secondItem="Aul-Oe-rz7" secondAttribute="width" constant="-35" id="jYg-22-8zA"/>
-                            <constraint firstItem="Veg-Zp-lz4" firstAttribute="height" secondItem="Aul-Oe-rz7" secondAttribute="height" constant="-35" id="kZb-0a-Cnj"/>
-                            <constraint firstItem="Veg-Zp-lz4" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" constant="-80" id="mwB-Xy-YD7"/>
-                            <constraint firstItem="5xs-Aw-hoW" firstAttribute="top" secondItem="Veg-Zp-lz4" secondAttribute="bottom" constant="30" id="oRe-3u-hv2"/>
-                            <constraint firstItem="Aul-Oe-rz7" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="qAS-zg-xyA"/>
+                            <constraint firstItem="O6J-uw-5t5" firstAttribute="centerY" secondItem="FCi-gl-O10" secondAttribute="centerY" id="3k5-WG-rFW"/>
+                            <constraint firstItem="O6J-uw-5t5" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="UqZ-V6-Vng"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCi-gl-O10"/>
                     </view>
@@ -232,7 +248,10 @@
     </scenes>
     <resources>
         <image name="ambulance" width="60" height="50"/>
+        <image name="green" width="160" height="160"/>
         <image name="location" width="39" height="56"/>
         <image name="message" width="52" height="45"/>
+        <image name="red" width="160" height="160"/>
+        <image name="yellow" width="160" height="160"/>
     </resources>
 </document>
