@@ -26,6 +26,11 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     
     var titles = [0:"Edit",1:"Home",2:"Settings"]
     
+    lazy var homeBarButtonImage = UIImage(named:"home")
+    lazy var editBarButtonImage = UIImage(named:"edit")
+    lazy var settingsBarButtonImage = UIImage(named:"settings")
+
+    
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
 
@@ -115,6 +120,21 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         if completed{
             mainPageControl.currentPage = selectedIndex
             setTitle(with: titles[selectedIndex])
+            setBarButtonImagesFor(selectedIndex)
+        }
+    }
+    
+    func setBarButtonImagesFor(_ selectedIndex: Int){
+        switch selectedIndex {
+        case 0:
+            leftBarButton.image = homeBarButtonImage
+            rightBarButton.image = settingsBarButtonImage
+        case 2:
+            leftBarButton.image = editBarButtonImage
+            rightBarButton.image = homeBarButtonImage
+        default:
+            leftBarButton.image = editBarButtonImage
+            rightBarButton.image = settingsBarButtonImage
         }
     }
     
@@ -128,16 +148,19 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     }
     */
     @IBAction func leftBarButtonTapped(_ sender: Any) {
-        self.pageViewController.setViewControllers([manageViewController], direction: .forward, animated: false, completion: {done in })
-        mainPageControl.currentPage = 0
-        setTitle(with: titles[0])
+        selectedIndex = (selectedIndex == 1) ? 0 : 1
+        setBarButtonImagesFor(selectedIndex)
+        self.pageViewController.setViewControllers([viewArray[selectedIndex]], direction: .forward, animated: false, completion: {done in })
+        mainPageControl.currentPage = selectedIndex
+        setTitle(with: titles[selectedIndex])
         
     }
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
-        self.pageViewController.setViewControllers([settingsViewController], direction: .forward, animated: false, completion: {done in })
-        mainPageControl.currentPage = 2
-        setTitle(with: titles[2])
-
+        selectedIndex = (selectedIndex == 1) ? 2 : 1
+        setBarButtonImagesFor(selectedIndex)
+        self.pageViewController.setViewControllers([viewArray[selectedIndex]], direction: .forward, animated: false, completion: {done in })
+        mainPageControl.currentPage = selectedIndex
+        setTitle(with: titles[selectedIndex])
     }
 }
