@@ -16,6 +16,10 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     @IBOutlet weak var yellowView: CircleView!
     @IBOutlet weak var greenView: CircleView!
     
+    @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
+    @IBOutlet weak var greenButton: UIButton!
+    
     let manageController = ManageController.sharedInstance
     var colors: (red: Color?, yellow: Color?, green: Color?)?
     var selectedColor: Color?

@@ -11,6 +11,7 @@
 		9E259C691F910309004019AC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E259C681F910309004019AC /* Home.storyboard */; };
 		9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */; };
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
+		9E3DA9CC1F9F88C8002A8491 /* ThemeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DA9CB1F9F88C8002A8491 /* ThemeEntity.swift */; };
 		9E48D2B01F9E306600DB2D4D /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */; };
 		9E5BBE631F963D300031A635 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE621F963D300031A635 /* Color.swift */; };
 		9E5BBE661F964D590031A635 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		9E259C681F910309004019AC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9E37D2351F90BBED00A80A8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		9E3DA9CB1F9F88C8002A8491 /* ThemeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEntity.swift; sourceTree = "<group>"; };
 		9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		9E5BBE621F963D300031A635 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				9EE46C721F961AEC002C4098 /* ColorsEntity.swift */,
 				9EE46C6E1F961799002C4098 /* ContactsEntity.swift */,
 				9EE46C701F961816002C4098 /* PhoneEntity.swift */,
+				9E3DA9CB1F9F88C8002A8491 /* ThemeEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				9EE46C6F1F961799002C4098 /* ContactsEntity.swift in Sources */,
 				9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */,
 				9E5BBE661F964D590031A635 /* LocationTableViewCell.swift in Sources */,
+				9E3DA9CC1F9F88C8002A8491 /* ThemeEntity.swift in Sources */,
 				9EE46C7D1F961D0B002C4098 /* Repository.swift in Sources */,
 				9EE46C7A1F961C92002C4098 /* ManageController.swift in Sources */,
 				9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */,

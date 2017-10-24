@@ -107,8 +107,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="sgF-Ak-jbB"/>
                     <connections>
+                        <outlet property="greenButton" destination="Ozr-2i-CVe" id="6b2-C6-tA1"/>
                         <outlet property="greenView" destination="5xs-Aw-hoW" id="lAm-bC-Xoj"/>
+                        <outlet property="redButton" destination="ehT-Ml-L6E" id="bRT-y3-vmB"/>
                         <outlet property="redView" destination="Aul-Oe-rz7" id="37Z-Dg-m8s"/>
+                        <outlet property="yellowButton" destination="FsV-J0-TiV" id="pQA-cu-WFN"/>
                         <outlet property="yellowView" destination="Veg-Zp-lz4" id="FOK-8i-mEB"/>
                     </connections>
                 </viewController>
