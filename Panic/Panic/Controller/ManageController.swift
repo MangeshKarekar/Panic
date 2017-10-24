@@ -33,7 +33,6 @@ class ManageController {
     
     
     func getColorsTuple()throws ->colorsTuple{
-        
         let colors = try repository.getColors()
         return  convertColorsToModel(results: colors)
     }

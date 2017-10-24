@@ -26,6 +26,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     let messageSent = "Message sent"
     
     let locationManager = CLLocationManager()
+    lazy var canSendSMS = MFMessageComposeViewController.canSendText()
     
     typealias coordinates = (lattitude: String, longitude: String)
     
@@ -38,9 +39,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        do{
-            colors = try manageController.getColorsTuple()
-        }catch{}
+        checkSmsService()
+        getColors()
         
     }
     override func didReceiveMemoryWarning() {
@@ -59,14 +59,18 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     func setUI(){
         animateViews()
         createColors()
-        setupSmsService()
-        do{
-            colors = try manageController.getColorsTuple()
-        }catch{}
     }
     
-    func setupSmsService(){
-        if !MFMessageComposeViewController.canSendText(){
+    func getColors(){
+        do{
+            colors = try manageController.getColorsTuple()
+        }catch{
+            showError(withMessage: generalError)
+        }
+    }
+    
+    func checkSmsService(){
+        if !canSendSMS{
             UIAlertController.showErrorAlert(withMessage: messageServiceNotAvailable, inView: self)
         }
     }
@@ -130,7 +134,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     
     func performActionWith(_ userLocation: coordinates?){
         
-        if !MFMessageComposeViewController.canSendText(){
+        if !canSendSMS{
             UIAlertController.showErrorAlert(withMessage: messageServiceNotAvailable, inView: self)
             return
         }
@@ -140,11 +144,18 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             showError(withMessage: generalError)
             return
         }
+        DispatchQueue.global().async {[weak self] in
+            self?.prepareMessageUIfor(selectedColor, userLocation: userLocation)
+        }
+      
+    }
     
-        var receipients = [String]()
-        var message = selectedColor.message
+    func prepareMessageUIfor(_ color: Color, userLocation: coordinates?){
         
-        let contacts = try! manageController.getContacts(forColor: selectedColor.name)
+        var receipients = [String]()
+        var message = color.message
+        
+        let contacts = try! manageController.getContacts(forColor: color.name)
         
         for contact in contacts{
             for phone in contact.phones{
@@ -157,15 +168,12 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             return
         }
         
-        message = selectedColor.message
-        
-        
-        
+        message = color.message
         let messageVC = MFMessageComposeViewController()
         messageVC.messageComposeDelegate = self
         messageVC.recipients = receipients
         messageVC.body = message
-        if selectedColor.locationStatus{
+        if color.locationStatus{
             if let userLocation = userLocation{
                 let link = getLocationLink(forUserCoordinates: userLocation)
                 let locationURL = URL(string:link)
@@ -174,9 +182,12 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             }
         }
         messageVC.body = message
+        DispatchQueue.main.async {[weak self] in
+            self?.present(messageVC, animated: true, completion: nil)
+        }
         
-        self.present(messageVC, animated: true, completion: nil)
     }
+    
     
     func getLocationLink(forUserCoordinates coordinates: coordinates) ->String{
        let link = "http://maps.apple.com/?ll=\(coordinates.lattitude),\(coordinates.longitude)"
