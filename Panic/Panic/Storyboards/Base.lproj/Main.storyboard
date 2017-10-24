@@ -34,18 +34,20 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="edit" id="1kz-H6-5Qg">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="editButtonTapped:" destination="7WF-46-wEg" id="Ijv-mH-ekP"/>
+                                <action selector="leftBarButtonTapped:" destination="7WF-46-wEg" id="UdS-nJ-wFP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="EEs-ps-aFM">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="settingsButtonTapped:" destination="7WF-46-wEg" id="pzs-9z-JuO"/>
+                                <action selector="rightBarButtonTapped:" destination="7WF-46-wEg" id="I1h-KZ-BO3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftBarButton" destination="1kz-H6-5Qg" id="Gzg-SA-bSC"/>
                         <outlet property="mainPageControl" destination="eqa-wT-3wm" id="bxx-H1-8si"/>
+                        <outlet property="rightBarButton" destination="EEs-ps-aFM" id="Yd9-iQ-sw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcR-Wh-kLd" userLabel="First Responder" sceneMemberID="firstResponder"/>

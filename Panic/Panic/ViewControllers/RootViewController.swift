@@ -26,6 +26,10 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     
     var titles = [0:"Edit",1:"Home",2:"Settings"]
     
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePageController()
@@ -123,14 +127,17 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func editButtonTapped(_ sender: Any) {
+    @IBAction func leftBarButtonTapped(_ sender: Any) {
         self.pageViewController.setViewControllers([manageViewController], direction: .forward, animated: false, completion: {done in })
         mainPageControl.currentPage = 0
+        setTitle(with: titles[0])
+        
     }
     
-    @IBAction func settingsButtonTapped(_ sender: Any) {
+    @IBAction func rightBarButtonTapped(_ sender: Any) {
         self.pageViewController.setViewControllers([settingsViewController], direction: .forward, animated: false, completion: {done in })
         mainPageControl.currentPage = 2
+        setTitle(with: titles[2])
 
     }
 }
