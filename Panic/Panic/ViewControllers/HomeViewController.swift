@@ -38,19 +38,24 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     
     typealias coordinates = (lattitude: String, longitude: String)
     
+    var theme: ThemeEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setupLocationServices()
         checkSmsService()
+        getTheme()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getColors()
+        setTheme()
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,6 +72,48 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     func setUI(){
         animateViews()
         createColorsAndThemes()
+    }
+    
+    func getTheme(){
+        do{
+            theme = try themeController.getTheme()
+            setTheme()
+        }catch{
+            // showError(withMessage: themeErrorMessage)
+        }
+    }
+    
+    func setTheme(){
+        if let theme = theme{
+            // setBackground
+            self.view.backgroundColor = theme.themeColor
+            if let buttonImageNames = theme.buttonImageNames{
+                setButtonImages(forImagesNames: buttonImageNames)
+            }
+        }
+    }
+    
+    func setButtonImages(forImagesNames buttonImagesNames: (red: String?, yellow: String?, green: String?)){
+        
+        if let red = buttonImagesNames.red{
+            redButton.setBackgroundImage(UIImage(named:red), for: .normal)
+            redButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        }else{
+            redButton.setBackgroundImage(nil, for: .normal)
+        }
+        
+        if let yellow = buttonImagesNames.yellow{
+            yellowButton.setBackgroundImage(UIImage(named:yellow), for: .normal)
+        }else{
+            yellowButton.setBackgroundImage(nil, for: .normal)
+        }
+        
+        if let green = buttonImagesNames.green{
+            greenButton.setBackgroundImage(UIImage(named:green), for: .normal)
+        }else{
+            greenButton.setBackgroundImage(nil, for: .normal)
+        }
+        
     }
     
     func getColors(){

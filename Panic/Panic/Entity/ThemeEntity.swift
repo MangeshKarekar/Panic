@@ -18,7 +18,7 @@ public enum ColorCode: String{
         case .light:
             return UIColor.white
         case .dark:
-            return UIColor.brown
+            return "#2E2E2E".colorFromHex(alpha: 1.0)
         }
     }
 }
@@ -26,6 +26,18 @@ public enum ColorCode: String{
 public enum ButtonCode: String{
     case adult = "Adults"
     case kids = "Kids"
+    
+    var imageNames: (red: String?, yellow: String?, green: String?){
+        
+        switch self {
+        case .adult:
+            return (red: nil, yellow: nil, green: nil)
+        case .kids:
+            return (red: "kidFriendlyRed", yellow: "kidFriendlyYellow", green: "kidFriendlyGreen")
+        }
+        
+    }
+    
 }
 
 
@@ -40,6 +52,13 @@ class ThemeEntity: Object {
         get{
             let colorCode = ColorCode(rawValue: themeColorCode)
             return colorCode?.color
+        }
+    }
+    
+    var buttonImageNames: (red: String?, yellow: String?, green: String?)?{
+        get{
+            let buttonCode = ButtonCode(rawValue: homeButtonCode)
+            return buttonCode?.imageNames
         }
     }
     
