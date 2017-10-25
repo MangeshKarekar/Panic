@@ -123,6 +123,8 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
             mainPageControl.currentPage = selectedIndex
             setTitle(with: titles[selectedIndex])
             setBarButtonImagesFor(selectedIndex)
+            fromEdit = (selectedIndex == 0)
+            fromSettings = (selectedIndex == 2)
         }
     }
     
