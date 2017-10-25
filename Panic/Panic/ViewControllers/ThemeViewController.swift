@@ -17,7 +17,7 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var selectedColor = ColorCode.light.rawValue
     let buttonCodes = [ButtonCode.adult.rawValue,ButtonCode.kids.rawValue]
 
-    let sectionTitles = ["BackgroundColor","Buttons Indication"]
+    let sectionTitles = ["Background Color","Buttons Indication"]
     
     @IBOutlet weak var themeTable: UITableView!
 
@@ -132,7 +132,9 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        updateTheme(for: indexPath)
