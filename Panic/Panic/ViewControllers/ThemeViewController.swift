@@ -14,7 +14,7 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
     let colorCodes = [ColorCode.dark.rawValue,ColorCode.light.rawValue]
     var theme: ThemeEntity?
     var themeObserver : NotificationToken?
-    
+    var selectedColor = ColorCode.light.rawValue
     let buttonCodes = [ButtonCode.adult.rawValue,ButtonCode.kids.rawValue]
 
     let sectionTitles = ["BackgroundColor","Buttons Indication"]
@@ -27,16 +27,29 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
         super.viewDidLoad()
         do{
             theme = try themeController.getTheme()
+            setTheme()
         }catch{
            // showError(withMessage: themeErrorMessage)
         }
         observeTheme()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setTheme(){
+        if let theme = theme{
+            self.view.backgroundColor = theme.themeColor
+            selectedColor = theme.themeColorCode
+        }
     }
     
     func observeTheme(){
@@ -72,15 +85,23 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return colorCodes.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var cell = UITableViewCell()
         if indexPath.section == 0{
-            return getColorCodeCell(forRow: indexPath.row)
+            cell = getColorCodeCell(forRow: indexPath.row)
 
         }else{
-            return getButtonCodeCell(forRow: indexPath.row)
+            cell = getButtonCodeCell(forRow: indexPath.row)
         }
         
+        if selectedColor == ColorCode.dark.rawValue{
+            cell.textLabel?.textColor = UIColor.white
+        }else{
+            cell.textLabel?.textColor = UIColor.black
+        }
+        
+        return cell
     }
     
     func getColorCodeCell(forRow row: Int) ->UITableViewCell{
@@ -120,11 +141,13 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func updateTheme(for indexPath: IndexPath){
         do{
             if let theme = theme{
+                selectedColor = colorCodes[indexPath.row]
                 switch indexPath.section{
                 case 0: try themeController.updateTheme(theme, withColorCode: colorCodes[indexPath.row])
                 case 1: try themeController.updateTheme(theme, withButtonCode: buttonCodes[indexPath.row])
                 default: break
                 }
+                setTheme()
             }
         }catch{
             // to do
