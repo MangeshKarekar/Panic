@@ -14,7 +14,7 @@ class ManageController {
     
     static let sharedInstance = ManageController()
     
-    private let repository = Repository.sharedInstance
+    private let repository = ColorRepository.sharedInstance
     
     typealias colorsTuple = (red: Color?, yellow: Color?, green: Color?)
     

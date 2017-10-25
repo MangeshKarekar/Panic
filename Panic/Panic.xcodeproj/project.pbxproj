@@ -13,6 +13,9 @@
 		9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E37D2371F90BC3600A80A8D /* ManageViewController.swift */; };
 		9E3DA9CC1F9F88C8002A8491 /* ThemeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DA9CB1F9F88C8002A8491 /* ThemeEntity.swift */; };
 		9E48D2B01F9E306600DB2D4D /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */; };
+		9E52788E1FA0A766008D9972 /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E52788D1FA0A766008D9972 /* ColorRepository.swift */; };
+		9E5278901FA0A782008D9972 /* ThemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E52788F1FA0A782008D9972 /* ThemeRepository.swift */; };
+		9E5278921FA0A7AE008D9972 /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5278911FA0A7AE008D9972 /* ThemeController.swift */; };
 		9E5BBE631F963D300031A635 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE621F963D300031A635 /* Color.swift */; };
 		9E5BBE661F964D590031A635 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */; };
 		9E5BBE681F964D680031A635 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5BBE671F964D680031A635 /* MessageTableViewCell.swift */; };
@@ -57,6 +60,9 @@
 		9E37D2371F90BC3600A80A8D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
 		9E3DA9CB1F9F88C8002A8491 /* ThemeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEntity.swift; sourceTree = "<group>"; };
 		9E48D2AF1F9E306600DB2D4D /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		9E52788D1FA0A766008D9972 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
+		9E52788F1FA0A782008D9972 /* ThemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRepository.swift; sourceTree = "<group>"; };
+		9E5278911FA0A7AE008D9972 /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		9E5BBE621F963D300031A635 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9E5BBE651F964D590031A635 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		9E5BBE671F964D680031A635 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				9EE46C791F961C92002C4098 /* ManageController.swift */,
+				9E5278911FA0A7AE008D9972 /* ThemeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				9EE46C7C1F961D0B002C4098 /* Repository.swift */,
+				9E52788D1FA0A766008D9972 /* ColorRepository.swift */,
+				9E52788F1FA0A782008D9972 /* ThemeRepository.swift */,
 			);
 			path = RepositoryFunctions;
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 				9EE46C731F961AEC002C4098 /* ColorsEntity.swift in Sources */,
 				9EC7FCC11F8F9ACB002B2A62 /* CircleView.swift in Sources */,
 				9EB3F2941F950FBF00B91E25 /* ContactsViewController.swift in Sources */,
+				9E5278901FA0A782008D9972 /* ThemeRepository.swift in Sources */,
 				9EF9F69F1F94FD7D0065539E /* Extensions.swift in Sources */,
 				9E48D2B01F9E306600DB2D4D /* CustomButtons.swift in Sources */,
 				9E5BBE681F964D680031A635 /* MessageTableViewCell.swift in Sources */,
@@ -504,6 +514,7 @@
 				9EC7FCA21F8F8F47002B2A62 /* HomeViewController.swift in Sources */,
 				9E259C601F90C85D004019AC /* RootViewController.swift in Sources */,
 				9EE46C6F1F961799002C4098 /* ContactsEntity.swift in Sources */,
+				9E52788E1FA0A766008D9972 /* ColorRepository.swift in Sources */,
 				9EC7FCA01F8F8F47002B2A62 /* AppDelegate.swift in Sources */,
 				9E5BBE661F964D590031A635 /* LocationTableViewCell.swift in Sources */,
 				9E3DA9CC1F9F88C8002A8491 /* ThemeEntity.swift in Sources */,
@@ -512,6 +523,7 @@
 				9E37D2381F90BC3600A80A8D /* ManageViewController.swift in Sources */,
 				9EE46C711F961816002C4098 /* PhoneEntity.swift in Sources */,
 				9E37D2361F90BBED00A80A8D /* SettingsViewController.swift in Sources */,
+				9E5278921FA0A7AE008D9972 /* ThemeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

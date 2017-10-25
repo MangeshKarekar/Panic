@@ -31,13 +31,13 @@
                         <viewLayoutGuide key="safeArea" id="0py-Gc-Sdk"/>
                     </view>
                     <navigationItem key="navigationItem" id="EKt-F1-Nd1">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="edit" id="1kz-H6-5Qg">
+                        <barButtonItem key="leftBarButtonItem" image="edit" id="1kz-H6-5Qg">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="leftBarButtonTapped:" destination="7WF-46-wEg" id="UdS-nJ-wFP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="settings" id="EEs-ps-aFM">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="EEs-ps-aFM">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="rightBarButtonTapped:" destination="7WF-46-wEg" id="I1h-KZ-BO3"/>
@@ -61,9 +61,38 @@
                     <view key="view" contentMode="scaleToFill" id="hwH-Ie-cWV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xKS-gP-BQs">
+                                <rect key="frame" x="-0.66666666666665719" y="5" width="375.33333333333326" height="812"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="IoI-0Q-tKe">
+                                        <rect key="frame" x="0.0" y="55.333333333333336" width="375.33333333333326" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IoI-0Q-tKe" id="f6C-Sj-XJG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375.33333333333326" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Drz-PG-llL" id="8tq-2W-JPV"/>
+                                    <outlet property="delegate" destination="Drz-PG-llL" id="MjW-xT-5E1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xKS-gP-BQs" firstAttribute="width" secondItem="hwH-Ie-cWV" secondAttribute="width" id="3zI-Q4-DtG"/>
+                            <constraint firstItem="xKS-gP-BQs" firstAttribute="centerY" secondItem="UPl-Qp-vxy" secondAttribute="centerY" id="A2m-Ke-wij"/>
+                            <constraint firstItem="xKS-gP-BQs" firstAttribute="height" secondItem="hwH-Ie-cWV" secondAttribute="height" id="Iqm-eT-hbg"/>
+                            <constraint firstItem="xKS-gP-BQs" firstAttribute="centerX" secondItem="UPl-Qp-vxy" secondAttribute="centerX" id="hjj-yL-4HM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UPl-Qp-vxy"/>
                     </view>
+                    <connections>
+                        <outlet property="settingsTable" destination="xKS-gP-BQs" id="hEi-R6-UK6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCR-mc-Kpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,14 +115,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59G-cG-n0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-665.60000000000002" y="-588.17733990147781"/>
-        </scene>
-        <!--ManageViewController-->
-        <scene sceneID="iKE-yN-5Mf">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ManageViewController" storyboardName="Manage" referencedIdentifier="ManageViewController" id="Dpq-hL-q4s" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3u-rT-a6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="943.20000000000005" y="150"/>
         </scene>
     </scenes>
     <resources>
