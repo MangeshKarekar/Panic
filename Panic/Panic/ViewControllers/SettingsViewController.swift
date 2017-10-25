@@ -18,17 +18,32 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     var theme: ThemeEntity?
     var themeObserver : NotificationToken?
-    
+    var selectedColor = ColorCode.light.rawValue
+
     let themeErrorMessage = "Something went wrong please restart the app again"
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
             theme = try themeController.getTheme()
+            setTheme()
         }catch{
             showError(withMessage: themeErrorMessage)
         }
         observeThemeMode()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+        settingsTable.reloadData()
+    }
+    
+    func setTheme(){
+        if let theme = theme{
+            self.view.backgroundColor = theme.themeColor
+            selectedColor = theme.themeColorCode
+        }
     }
     
     func observeThemeMode(){
@@ -50,6 +65,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     /*
@@ -90,6 +106,12 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
                 }
             }
         default: break
+        }
+        
+        if selectedColor == ColorCode.dark.rawValue{
+            cell.textLabel?.textColor = UIColor.white
+        }else{
+            cell.textLabel?.textColor = UIColor.black
         }
         return cell
     }
