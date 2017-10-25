@@ -21,6 +21,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     @IBOutlet weak var greenButton: UIButton!
     
     let manageController = ManageController.sharedInstance
+    let themeController = ThemeController.sharedInstance
+    
     var colors: (red: Color?, yellow: Color?, green: Color?)?
     var selectedColor: Color?
     let messageServiceNotAvailable = "SMS services are not available"
@@ -28,6 +30,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     let noContactsMessage = "No contacts added. Please add them first"
     let generalError = "Something went wrong. Please restart the app again"
     let messageSent = "Message sent"
+    
+    let fatatErrorMessage = "Could not initiate app. Please re install or contact us"
     
     let locationManager = CLLocationManager()
     lazy var canSendSMS = MFMessageComposeViewController.canSendText()
@@ -62,7 +66,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     
     func setUI(){
         animateViews()
-        createColors()
+        createColorsAndThemes()
     }
     
     func getColors(){
@@ -79,10 +83,13 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         }
     }
     
-    func createColors(){
+    func createColorsAndThemes(){
         do{
             try manageController.createColors()
-        }catch{}
+            try themeController.createTheme()
+        }catch{
+            showError(withMessage: fatatErrorMessage)
+        }
     }
     
     func animateViews(){
