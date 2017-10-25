@@ -19,11 +19,16 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     let manageController = ManageController.sharedInstance
     var colorResults: Results<ColorsEntity>?
-    
+    var theme: ThemeEntity?
+    let themeController = ThemeController.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
             colorResults = try manageController.getColors()
+            theme = try themeController.getTheme()
+            setTheme()
+
         }catch{print(error)}
         panicColorKeys = [String](panicColors.keys)
         // Do any additional setup after loading the view.
@@ -34,13 +39,21 @@ class ManageViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    func setTheme(){
+        if let theme = theme{
+            self.view.backgroundColor = theme.themeColor
+        }
+    }
     
     // MARK: - Navigation
 
