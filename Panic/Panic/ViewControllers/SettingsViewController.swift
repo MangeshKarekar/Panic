@@ -125,6 +125,14 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         }
     }
     
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 1{
+            return "coming soon"
+        }
+        
+        return nil
+    }
+    
     //MARK: Functions
     
     func toggleAutoDarkMode(){
