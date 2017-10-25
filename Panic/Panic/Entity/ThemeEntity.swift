@@ -23,9 +23,9 @@ public enum ColorCode: String{
     }
 }
 
-public enum ButtonCode: Int{
-    case adult = 1
-    case kids = 2
+public enum ButtonCode: String{
+    case adult = "Adults"
+    case kids = "Kids"
 }
 
 

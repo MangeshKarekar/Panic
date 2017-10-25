@@ -57,4 +57,12 @@ class ThemeRepository: Repository{
         }
     }
     
+    func updateTheme(_ theme: ThemeEntity, withButtonCode value: String)throws{
+        let realm = try getRealm()
+        try realm.write {
+            theme.homeButtonCode = value
+            realm.add(theme, update: true)
+        }
+    }
+    
 }

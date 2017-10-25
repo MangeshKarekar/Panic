@@ -14,7 +14,11 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
     let colorCodes = [ColorCode.dark.rawValue,ColorCode.light.rawValue]
     var theme: ThemeEntity?
     var themeObserver : NotificationToken?
+    
+    let buttonCodes = [ButtonCode.adult.rawValue,ButtonCode.kids.rawValue]
 
+    let sectionTitles = ["BackgroundColor","Buttons Indication"]
+    
     @IBOutlet weak var themeTable: UITableView!
 
     let themeController = ThemeController.sharedInstance
@@ -39,7 +43,7 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
         themeObserver = theme?.observe({[weak self] change in
             
             switch change{
-            case .change(_): self?.themeTable.reloadSections([0], with: .automatic)
+            case .change(_): self?.themeTable.reloadSections([0,1], with: .automatic)
             default: break
             }
             
@@ -60,15 +64,26 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     */
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitles.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colorCodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return getCell(forRow: indexPath.row)
+        
+        if indexPath.section == 0{
+            return getColorCodeCell(forRow: indexPath.row)
+
+        }else{
+            return getButtonCodeCell(forRow: indexPath.row)
+        }
+        
     }
     
-    func getCell(forRow row: Int) ->UITableViewCell{
+    func getColorCodeCell(forRow row: Int) ->UITableViewCell{
         let cell = themeTable.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = colorCodes[row]
         if let theme = theme{
@@ -82,14 +97,34 @@ class ThemeViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return cell
     }
     
+    func getButtonCodeCell(forRow row: Int) ->UITableViewCell{
+        let cell = themeTable.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = buttonCodes[row]
+        if let theme = theme{
+            if theme.homeButtonCode == buttonCodes[row]{
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.none
+            }
+            
+        }
+        return cell
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       updateTheme(forRow: indexPath.row)
+       updateTheme(for: indexPath)
     }
 
-    func updateTheme(forRow row: Int){
+    func updateTheme(for indexPath: IndexPath){
         do{
             if let theme = theme{
-                try themeController.updateTheme(theme, withColorCode: colorCodes[row])
+                switch indexPath.section{
+                case 0: try themeController.updateTheme(theme, withColorCode: colorCodes[indexPath.row])
+                case 1: try themeController.updateTheme(theme, withButtonCode: buttonCodes[indexPath.row])
+                default: break
+                }
             }
         }catch{
             // to do
