@@ -9,9 +9,9 @@
 import Foundation
 import RealmSwift
 
-public enum ColorCode: Int{
-    case light = 1
-    case dark = 2
+public enum ColorCode: String{
+    case light = "Light"
+    case dark = "Dark"
     
     var color: UIColor{
         switch self {

@@ -49,4 +49,12 @@ class ThemeRepository: Repository{
         }
     }
     
+    func updateTheme(_ theme: ThemeEntity, withColorCode value: String)throws{
+        let realm = try getRealm()
+        try realm.write {
+            theme.themeColorCode = value
+            realm.add(theme, update: true)
+        }
+    }
+    
 }

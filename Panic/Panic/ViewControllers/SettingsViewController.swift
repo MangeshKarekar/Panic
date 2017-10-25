@@ -13,11 +13,11 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     @IBOutlet weak var settingsTable: UITableView!
     
     let data = [0: "Themes", 1: "Automatic dark mode"]
-    
+    private let themesSegue = "themesSegue"
     let themeController = ThemeController.sharedInstance
     
     var theme: ThemeEntity?
-    var darkModeObserver : NotificationToken?
+    var themeObserver : NotificationToken?
     
     let themeErrorMessage = "Something went wrong please restart the app again"
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func observeThemeMode(){
-        darkModeObserver = theme?.observe({[weak self] change in
+        themeObserver = theme?.observe({[weak self] change in
             
             switch change{
             case .change(_): self?.settingsTable.reloadSections([1], with: .automatic)
@@ -40,6 +40,10 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
             }
             
         })
+    }
+    
+    deinit {
+        themeObserver?.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +74,6 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = getCell(forSection: indexPath.section)
-        //cell?.textLabel?.text = data[indexPath.section]
         return cell
     }
     
@@ -94,7 +97,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.section{
-        case 0: break
+        case 0: self.performSegue(withIdentifier: themesSegue, sender: nil)
         case 1: toggleAutoDarkMode()
         default: break
         }

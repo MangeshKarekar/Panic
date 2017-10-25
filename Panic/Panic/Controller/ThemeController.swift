@@ -28,4 +28,8 @@ class ThemeController{
         try repository.updateTheme(theme, withDarkMode: value)
     }
     
+    func updateTheme(_ theme: ThemeEntity, withColorCode value: String)throws{
+        try repository.updateTheme(theme, withColorCode: value)
+    }
+    
 }
