@@ -34,6 +34,8 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
 
+    private var fromEdit = false
+    private var fromSettings = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +151,11 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     */
     @IBAction func leftBarButtonTapped(_ sender: Any) {
         selectedIndex = (selectedIndex == 1) ? 0 : 1
+        if fromSettings{
+            selectedIndex = 0
+            fromSettings = false
+        }
+        fromEdit = (selectedIndex == 0)
         setBarButtonImagesFor(selectedIndex)
         self.pageViewController.setViewControllers([viewArray[selectedIndex]], direction: .forward, animated: false, completion: {done in })
         mainPageControl.currentPage = selectedIndex
@@ -158,6 +165,11 @@ class RootViewController: UIViewController,UIPageViewControllerDataSource,UIPage
     
     @IBAction func rightBarButtonTapped(_ sender: Any) {
         selectedIndex = (selectedIndex == 1) ? 2 : 1
+        if fromEdit {
+            selectedIndex = 2
+            fromEdit = false
+        }
+        fromSettings = (selectedIndex == 2)
         setBarButtonImagesFor(selectedIndex)
         self.pageViewController.setViewControllers([viewArray[selectedIndex]], direction: .forward, animated: false, completion: {done in })
         mainPageControl.currentPage = selectedIndex
