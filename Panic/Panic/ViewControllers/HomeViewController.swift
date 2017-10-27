@@ -235,6 +235,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         }
         
         if receipients.count == 0{
+            hideActivity()
             showError(withMessage: noContactsMessage)
             return
         }
@@ -257,10 +258,16 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         
         DispatchQueue.main.sync {[weak self] in
             self?.present(messageVC, animated: true, completion: nil)
+            self?.hideActivity()
+        }
+        
+    }
+    
+    func hideActivity(){
+        DispatchQueue.main.async {[weak self] in
             self?.activity.stopAnimating()
             self?.activity.isHidden = true
         }
-        
     }
     
     
