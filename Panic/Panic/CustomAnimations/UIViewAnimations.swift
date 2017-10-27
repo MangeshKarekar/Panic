@@ -31,4 +31,28 @@ class UIViewAnimations {
             })
         }
     }
+    
+    static func showFlash(withMessage message: String, backgroundColor: UIColor?, inView view: UIView){
+        let flashView = UIView(frame: view.frame)
+        flashView.backgroundColor = Colors.panicRed
+        if let backgroundColor = backgroundColor{
+            flashView.backgroundColor = backgroundColor
+        }
+        flashView.alpha = 0.0
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: flashView.frame.width, height: 40))
+        label.center = flashView.center
+        label.textAlignment = NSTextAlignment.center
+        label.text = message
+        label.textColor = UIColor.white
+        flashView.addSubview(label)
+        view.addSubview(flashView)
+        UIView.animate(withDuration: 1.0, animations: {
+            flashView.alpha = 1.0
+        }) { (finished) in
+            UIView.animate(withDuration: 1.0, animations: {
+                flashView.alpha = 0.0
+                flashView.removeFromSuperview()
+            })
+        }
+    }
 }

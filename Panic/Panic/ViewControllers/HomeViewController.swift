@@ -263,7 +263,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     }
     
     func showMessageSentAlert(){
-        showSuccess(withMessage: messageSent)
+        UIViewAnimations.showFlash(withMessage: messageSent, backgroundColor: selectedColor?.color, inView: self.view)
     }
     
     //MARK: Alerts
