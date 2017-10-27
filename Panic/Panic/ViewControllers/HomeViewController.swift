@@ -65,7 +65,9 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             self.locationManager.requestWhenInUseAuthorization()
-        default: self.showFlash(withMessage: locationDisabledMessage)
+        case .denied:
+            self.showFlash(withMessage: locationDisabledMessage)
+        default: break
         }
     }
     
