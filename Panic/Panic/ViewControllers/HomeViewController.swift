@@ -20,6 +20,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
     let manageController = ManageController.sharedInstance
     let themeController = ThemeController.sharedInstance
     
@@ -39,6 +41,12 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     typealias coordinates = (lattitude: String, longitude: String)
     
     var theme: ThemeEntity?
+    
+    var messageController: MFMessageComposeViewController{
+        get{
+            return MFMessageComposeViewController()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +80,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     }
     
     func setUI(){
+        activity.isHidden = true
         animateViews()
         createColorsAndThemes()
     }
@@ -204,17 +213,12 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             showError(withMessage: generalError)
             return
         }
-       
+        activity.isHidden = false
+        activity.startAnimating()
         DispatchQueue.global().async {[weak self] in
             self?.prepareMessageUIfor(selectedColor, userLocation: userLocation)
         }
       
-    }
-    
-    var messageController: MFMessageComposeViewController{
-        get{
-            return MFMessageComposeViewController()
-        }
     }
     
     func prepareMessageUIfor(_ color: Color, userLocation: coordinates?){
@@ -253,6 +257,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         
         DispatchQueue.main.sync {[weak self] in
             self?.present(messageVC, animated: true, completion: nil)
+            self?.activity.stopAnimating()
+            self?.activity.isHidden = true
         }
         
     }

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O6J-uw-5t5">
-                                <rect key="frame" x="97.5" y="95.5" width="180" height="540.5"/>
+                                <rect key="frame" x="97" y="95" width="180" height="540.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-Oe-rz7" userLabel="RedView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
@@ -97,16 +97,29 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H2B-sl-Gf1">
+                                <rect key="frame" x="157.5" y="335.5" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="KkY-ii-zLk"/>
+                                    <constraint firstAttribute="height" constant="60" id="wa7-Ln-gjK"/>
+                                </constraints>
+                                <color key="color" red="0.98039215690000003" green="0.18039215689999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="H2B-sl-Gf1" firstAttribute="centerY" secondItem="FCi-gl-O10" secondAttribute="centerY" id="19d-zA-CNh"/>
                             <constraint firstItem="O6J-uw-5t5" firstAttribute="centerY" secondItem="FCi-gl-O10" secondAttribute="centerY" id="3k5-WG-rFW"/>
+                            <constraint firstItem="H2B-sl-Gf1" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="BQP-3f-hSh"/>
                             <constraint firstItem="O6J-uw-5t5" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="UqZ-V6-Vng"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCi-gl-O10"/>
                     </view>
                     <navigationItem key="navigationItem" id="sgF-Ak-jbB"/>
                     <connections>
+                        <outlet property="activity" destination="H2B-sl-Gf1" id="VR4-1t-gPm"/>
                         <outlet property="greenButton" destination="Ozr-2i-CVe" id="6b2-C6-tA1"/>
                         <outlet property="greenView" destination="5xs-Aw-hoW" id="lAm-bC-Xoj"/>
                         <outlet property="redButton" destination="ehT-Ml-L6E" id="bRT-y3-vmB"/>
