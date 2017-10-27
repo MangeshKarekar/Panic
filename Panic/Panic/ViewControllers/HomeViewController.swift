@@ -30,7 +30,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     let noContactsMessage = "No contacts added. Please add them first"
     let generalError = "Something went wrong. Please restart the app again"
     let messageSent = "Message sent"
-    
+    let locationDisabledMessage = "Location services disabled"
     let fatatErrorMessage = "Could not initiate app. Please re install or contact us"
     
     let locationManager = CLLocationManager()
@@ -65,7 +65,7 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             self.locationManager.requestWhenInUseAuthorization()
-        default: break
+        default: self.showFlash(withMessage: locationDisabledMessage)
         }
     }
     
@@ -272,8 +272,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         UIAlertController.showErrorAlert(withMessage: message, inView: self)
     }
     
-    private func showSuccess(withMessage message: String){
-        UIAlertController.showSuccessAlert(withMessage: message, inView: self)
+    private func showFlash(withMessage message: String){
+        UIViewAnimations.showFlash(withMessage: message, backgroundColor: selectedColor?.color, inView: self.view)
     }
 }
 
