@@ -204,10 +204,17 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             showError(withMessage: generalError)
             return
         }
+       
         DispatchQueue.global().async {[weak self] in
             self?.prepareMessageUIfor(selectedColor, userLocation: userLocation)
         }
       
+    }
+    
+    var messageController: MFMessageComposeViewController{
+        get{
+            return MFMessageComposeViewController()
+        }
     }
     
     func prepareMessageUIfor(_ color: Color, userLocation: coordinates?){
@@ -229,7 +236,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
         }
         
         message = color.message
-        let messageVC = MFMessageComposeViewController()
+       
+        let messageVC = messageController
         messageVC.messageComposeDelegate = self
         messageVC.recipients = receipients
         messageVC.body = message
@@ -242,7 +250,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
             }
         }
         messageVC.body = message
-        DispatchQueue.main.async {[weak self] in
+        
+        DispatchQueue.main.sync {[weak self] in
             self?.present(messageVC, animated: true, completion: nil)
         }
         
