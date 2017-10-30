@@ -685,10 +685,10 @@
 				DEVELOPMENT_TEAM = 3ZUL87XZRJ;
 				INFOPLIST_FILE = Panic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mangesh.Panic;
+				PRODUCT_BUNDLE_IDENTIFIER = defcon.panic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -701,10 +701,10 @@
 				DEVELOPMENT_TEAM = 3ZUL87XZRJ;
 				INFOPLIST_FILE = Panic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Mangesh.Panic;
+				PRODUCT_BUNDLE_IDENTIFIER = defcon.panic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
