@@ -82,6 +82,7 @@ class ManageController {
         let contactEntities:[ContactsEntity] = contacts.map{
             let name = $0.givenName + " " + $0.familyName
             let contactEntity = ContactsEntity()
+            contactEntity.id = name+colorName
             contactEntity.name = name
             contactEntity.color = colorName
             for phone in $0.phoneNumbers{

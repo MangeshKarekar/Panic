@@ -10,10 +10,11 @@ import Foundation
 import RealmSwift
 
 class ContactsEntity: Object{
+    @objc dynamic var id = ""
     @objc dynamic var name = ""
     @objc dynamic var color = ""
     let phones = List<PhoneEntity>()
     override static func primaryKey() -> String? {
-        return "name"
+        return "id"
     }
 }

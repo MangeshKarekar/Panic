@@ -52,7 +52,7 @@
                                                 <rect key="frame" x="-0.5" y="-0.5" width="180" height="163.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-J0-TiV">
-                                                <rect key="frame" x="25.5" y="25.5" width="130" height="113.5"/>
+                                                <rect key="frame" x="40.5" y="40.5" width="100" height="83.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="WoP-wt-aCl"/>
                                                 </connections>
@@ -60,10 +60,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" constant="-50" id="74q-nH-7l1"/>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="width" secondItem="Veg-Zp-lz4" secondAttribute="width" constant="-80" id="74q-nH-7l1"/>
                                             <constraint firstItem="ZaT-Xg-Go4" firstAttribute="centerX" secondItem="Veg-Zp-lz4" secondAttribute="centerX" id="F45-L6-2Kz"/>
                                             <constraint firstItem="FsV-J0-TiV" firstAttribute="centerX" secondItem="Veg-Zp-lz4" secondAttribute="centerX" id="KUa-kF-AOu"/>
-                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" constant="-50" id="gN3-Iv-U3l"/>
+                                            <constraint firstItem="FsV-J0-TiV" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" constant="-80" id="gN3-Iv-U3l"/>
                                             <constraint firstItem="ZaT-Xg-Go4" firstAttribute="centerY" secondItem="Veg-Zp-lz4" secondAttribute="centerY" id="ts6-lI-bLp"/>
                                             <constraint firstItem="FsV-J0-TiV" firstAttribute="centerY" secondItem="Veg-Zp-lz4" secondAttribute="centerY" id="vug-SA-nDn"/>
                                             <constraint firstItem="ZaT-Xg-Go4" firstAttribute="height" secondItem="Veg-Zp-lz4" secondAttribute="height" id="yTc-Yj-8da"/>
@@ -77,7 +77,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-2i-CVe">
-                                                <rect key="frame" x="25.5" y="25.5" width="130" height="113.5"/>
+                                                <rect key="frame" x="40.5" y="40.5" width="100" height="83.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="1PA-z5-iks"/>
                                                 </connections>
@@ -87,8 +87,8 @@
                                         <constraints>
                                             <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerY" secondItem="5xs-Aw-hoW" secondAttribute="centerY" id="1Hf-O0-KOP"/>
                                             <constraint firstItem="6gV-3J-lqT" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="BNe-OJ-fvz"/>
-                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="width" secondItem="5xs-Aw-hoW" secondAttribute="width" constant="-50" id="KnP-Gw-M6I"/>
-                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" constant="-50" id="Ow1-tO-JJO"/>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="width" secondItem="5xs-Aw-hoW" secondAttribute="width" constant="-80" id="KnP-Gw-M6I"/>
+                                            <constraint firstItem="Ozr-2i-CVe" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" constant="-80" id="Ow1-tO-JJO"/>
                                             <constraint firstItem="6gV-3J-lqT" firstAttribute="height" secondItem="5xs-Aw-hoW" secondAttribute="height" id="PTq-Hz-8og"/>
                                             <constraint firstItem="Ozr-2i-CVe" firstAttribute="centerX" secondItem="5xs-Aw-hoW" secondAttribute="centerX" id="WF2-54-sfP"/>
                                             <constraint firstItem="6gV-3J-lqT" firstAttribute="centerY" secondItem="5xs-Aw-hoW" secondAttribute="centerY" id="aQS-Xj-Mk6"/>
