@@ -27,7 +27,7 @@
                                                 <rect key="frame" x="-0.5" y="0.0" width="180" height="163.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-Ml-L6E">
-                                                <rect key="frame" x="39.5" y="40" width="100" height="83.5"/>
+                                                <rect key="frame" x="40" y="40.5" width="100" height="83.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="ZVd-KE-jxM"/>
                                                 </connections>
@@ -52,7 +52,7 @@
                                                 <rect key="frame" x="-0.5" y="-0.5" width="180" height="163.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-J0-TiV">
-                                                <rect key="frame" x="25" y="25" width="130" height="113.5"/>
+                                                <rect key="frame" x="25.5" y="25.5" width="130" height="113.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="WoP-wt-aCl"/>
                                                 </connections>
@@ -77,7 +77,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-2i-CVe">
-                                                <rect key="frame" x="25" y="25" width="130" height="113.5"/>
+                                                <rect key="frame" x="25.5" y="25.5" width="130" height="113.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="1PA-z5-iks"/>
                                                 </connections>

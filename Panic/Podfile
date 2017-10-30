@@ -6,9 +6,6 @@ target 'Panic' do
   use_frameworks!
 
     pod 'RealmSwift'
-    pod 'Fabric'
-    pod 'Crashlytics'
-    pod 'Answers'
 
   # Pods for Panic
 

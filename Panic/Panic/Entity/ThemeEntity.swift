@@ -31,7 +31,7 @@ public enum ButtonCode: String{
         
         switch self {
         case .adult:
-            return (red: nil, yellow: nil, green: nil)
+            return (red: "adultFriendlyRed", yellow: "adultFriendlyYellow", green: "adultFriendlyGreen")
         case .kids:
             return (red: "kidFriendlyRed", yellow: "kidFriendlyYellow", green: "kidFriendlyGreen")
         }
