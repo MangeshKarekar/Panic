@@ -272,7 +272,8 @@ class HomeViewController: UIViewController,MFMessageComposeViewControllerDelegat
     
     
     func getLocationLink(forUserCoordinates coordinates: coordinates) ->String{
-       let link = "http://maps.apple.com/?ll=\(coordinates.lattitude),\(coordinates.longitude)"
+        let link = "http://www.google.com/maps/place/\(coordinates.lattitude),\(coordinates.longitude)"
+      // let link = "http://maps.apple.com/?ll=\(coordinates.lattitude),\(coordinates.longitude)"
         return link
     }
     
