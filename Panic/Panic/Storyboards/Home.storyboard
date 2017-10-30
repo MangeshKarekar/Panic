@@ -18,16 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O6J-uw-5t5">
-                                <rect key="frame" x="97" y="95" width="180" height="540.5"/>
+                                <rect key="frame" x="97" y="95" width="180" height="532"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-Oe-rz7" userLabel="RedView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="160.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="YyE-GP-4Qy">
-                                                <rect key="frame" x="-0.5" y="0.0" width="180" height="163.5"/>
+                                                <rect key="frame" x="-0.5" y="0.0" width="180" height="160.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-Ml-L6E">
-                                                <rect key="frame" x="40" y="40.5" width="100" height="83.5"/>
+                                                <rect key="frame" x="40" y="40.5" width="100" height="80.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="ZVd-KE-jxM"/>
                                                 </connections>
@@ -46,13 +46,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-Zp-lz4" userLabel="YellowView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="188.5" width="180" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="180" height="161"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow" translatesAutoresizingMaskIntoConstraints="NO" id="ZaT-Xg-Go4">
-                                                <rect key="frame" x="-0.5" y="-0.5" width="180" height="163.5"/>
+                                                <rect key="frame" x="-0.5" y="-0.5" width="180" height="161"/>
                                             </imageView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-J0-TiV">
-                                                <rect key="frame" x="40.5" y="40.5" width="100" height="83.5"/>
+                                                <rect key="frame" x="40.5" y="40.5" width="100" height="81"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="WoP-wt-aCl"/>
                                                 </connections>
@@ -71,13 +71,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-Aw-hoW" userLabel="GreenView" customClass="CircleView" customModule="Panic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="377" width="180" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="371.5" width="180" height="160.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-3J-lqT">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="163.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="160.5"/>
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-2i-CVe">
-                                                <rect key="frame" x="40.5" y="40.5" width="100" height="83.5"/>
+                                                <rect key="frame" x="40.5" y="40.5" width="100" height="80.5"/>
                                                 <connections>
                                                     <action selector="panicButtonTapped:" destination="L3d-Rx-VaN" eventType="touchUpInside" id="1PA-z5-iks"/>
                                                 </connections>
@@ -111,8 +111,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H2B-sl-Gf1" firstAttribute="centerY" secondItem="FCi-gl-O10" secondAttribute="centerY" id="19d-zA-CNh"/>
-                            <constraint firstItem="O6J-uw-5t5" firstAttribute="centerY" secondItem="FCi-gl-O10" secondAttribute="centerY" id="3k5-WG-rFW"/>
+                            <constraint firstItem="FCi-gl-O10" firstAttribute="bottom" secondItem="O6J-uw-5t5" secondAttribute="bottom" constant="40" id="5fw-ba-aMg"/>
                             <constraint firstItem="H2B-sl-Gf1" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="BQP-3f-hSh"/>
+                            <constraint firstItem="O6J-uw-5t5" firstAttribute="top" secondItem="FCi-gl-O10" secondAttribute="top" constant="31" id="BzK-V2-Jf6"/>
                             <constraint firstItem="O6J-uw-5t5" firstAttribute="centerX" secondItem="FCi-gl-O10" secondAttribute="centerX" id="UqZ-V6-Vng"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCi-gl-O10"/>
